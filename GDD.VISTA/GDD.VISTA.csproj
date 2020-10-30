@@ -6,4 +6,8 @@
     <UseWindowsForms>true</UseWindowsForms>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\GDD.CONTROL\GDD.CONTROL.csproj" />
+  </ItemGroup>
+
 </Project>
