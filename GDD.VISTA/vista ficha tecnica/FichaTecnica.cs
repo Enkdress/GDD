@@ -29,7 +29,6 @@ namespace GDD.VISTA.vista_ficha_tecnica
             string creadores = txtCreadores.Text;
             string nombreJuego = txtNombreJuego.Text;
             string publicoDirigido = cbxPublico.Text;
-            string creador = txtCreadores.Text;
 
             string estilo = "";
             if ( rbtn3D.Checked ) estilo = "3D";
@@ -37,21 +36,21 @@ namespace GDD.VISTA.vista_ficha_tecnica
             else if ( rbtnPixelArt.Checked ) estilo = "PixelArt";
             else if ( rbtnRealista.Checked ) estilo = "Realista";
 
-            string[] genero = { };
-            if ( chbxPlataformas.Checked ) genero.Append<string>("Plataformas");
-            else if ( chbxDeportes.Checked ) genero.Append<string>("Deportes");
-            else if ( chbxCarreras.Checked ) genero.Append<string>("Carreras");
-            else if ( chbxLucha.Checked ) genero.Append<string>("Lucha");
-            else if ( chbxEstrategia.Checked ) genero.Append<string>("Estrategia");
-            else if ( chbxArcade.Checked ) genero.Append<string>("Arcade");
+            string[] genero = new string[6];
+            if ( chbxPlataformas.Checked ) genero[0] = "Plataformas";
+            if ( chbxDeportes.Checked ) genero[1] = "Deportes";
+            if ( chbxCarreras.Checked ) genero[2] = "Carreras";
+            if ( chbxLucha.Checked ) genero[3] = "Lucha";
+            if ( chbxEstrategia.Checked ) genero[4] = "Estrategia";
+            if ( chbxArcade.Checked ) genero[5] = "Arcade";
 
-            string[] sonido = { };
-            if ( chbxRetro.Checked ) sonido.Append<string>("Retro");
-            else if ( chbxRealista.Checked ) sonido.Append<string>("Realista");
-            else if ( chbxElectronico.Checked ) sonido.Append<string>("Electronico");
-            else if ( chbxBanda.Checked ) sonido.Append<string>("Banda");
+            string[] sonido = new string[4];
+            if ( chbxRetro.Checked ) sonido[0] = "Retro";
+            if ( chbxRealista.Checked ) sonido[1] = "Realista";
+            if ( chbxElectronico.Checked ) sonido[2] = "Electronico";
+            if ( chbxBanda.Checked ) sonido[3] = "Banda";
 
-            string[] _ = { ambiente, creadores, nombreJuego, estilo, publicoDirigido, creador };
+            string[] _ = { nombreJuego, ambiente, estilo, publicoDirigido, creadores };
             List<string[]> datos = new List<string[]>();
             datos.Add(_);
             datos.Add(sonido);

@@ -19,7 +19,6 @@ namespace GDD.MODELO
 
         public ArchivoPDF(String n) {
             nombre = n;
-            documento = new Document(pdfDoc);
         }
         public FileInfo Abrir(string destino) {
             FileInfo file = new FileInfo(destino);
@@ -28,8 +27,8 @@ namespace GDD.MODELO
             fileStream.Close();
             return file;//return path para escribir el pdf
         }
-        public void addParrafo(string titulo, string[] parrafo, FileInfo file) {
-            PdfDocument pdfdoc = new PdfDocument(new PdfWriter(file));
+        public void addParrafo(string titulo, string[] parrafo, string filename) {
+            PdfDocument pdfdoc = new PdfDocument(new PdfWriter(filename));
             Document document = new Document(pdfdoc);
             foreach (var para in parrafo) {
                 document.Add(new Paragraph(para));

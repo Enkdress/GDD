@@ -4,7 +4,7 @@ using System.Text;
 
 namespace GDD.MODELO
 {
-    class MFichaTecnica
+    public class MFichaTecnica
     {
         private string _nombreJuego;
         private string[] _genero;
@@ -15,6 +15,11 @@ namespace GDD.MODELO
         private string _creadores;
 
         #region getter y setter
+        public string NombreJuego
+        {
+            get { return this._nombreJuego; }
+            set { this._nombreJuego = value; }
+        }
         public string[] Genero
         {
             get { return this._genero; }
@@ -40,12 +45,20 @@ namespace GDD.MODELO
             get { return this._sonido; }
             set { this._sonido = value; }
         }
+        public string Creadores
+        {
+            get { return this._creadores; }
+            set { this._creadores = value; }
+        }
         #endregion
 
         public void GuardarPDF(string n)
         {
             ArchivoPDF archivoPDF = new ArchivoPDF(n);
-
+            archivoPDF.Abrir(n);
+            archivoPDF.addParrafo("Ficha tecnica", _genero, "fichatecnica.pdf");
+            archivoPDF.Mostrar(n);
+            archivoPDF.Cerrar();
         }
     }
 }
