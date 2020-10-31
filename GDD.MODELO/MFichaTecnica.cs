@@ -6,42 +6,45 @@ namespace GDD.MODELO
 {
     class MFichaTecnica
     {
-        private String _genero;
-        private String _ambientacion;
-        private String _publico;
-        private String _estilo;
-        private String _sonido;
+        private string _nombreJuego;
+        private string[] _genero;
+        private string _ambientacion;
+        private string _publico;
+        private string _estilo;
+        private string[] _sonido;
+        private string _creadores;
 
         #region getter y setter
-        public String Genero
+        public string[] Genero
         {
             get { return this._genero; }
             set { this._genero = value; }
         }
-        public String Ambientacion
+        public string Ambientacion
         {
             get { return this._ambientacion; }
             set { this._ambientacion = value; }
         }
-        public String Publico
+        public string Publico
         {
             get { return this._publico; }
             set { this._publico = value; }
         }
-        public String Estilo
+        public string Estilo
         {
             get { return this._estilo; }
             set { this._estilo = value; }
         }
-        public String Sonido
+        public string[] Sonido
         {
             get { return this._sonido; }
             set { this._sonido = value; }
         }
         #endregion
 
-        public void GuardarPDF()
+        public void GuardarPDF(string n)
         {
+            ArchivoPDF archivoPDF = new ArchivoPDF(n);
 
         }
     }

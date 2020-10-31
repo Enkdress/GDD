@@ -28,12 +28,67 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.label1 = new System.Windows.Forms.Label();
+            this.btnAbrirFichaTecnicaForm = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.SuspendLayout();
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Goudy Stout", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label1.Location = new System.Drawing.Point(17, 42);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(542, 31);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "GAME-design-DOCUMENT";
+            // 
+            // btnAbrirFichaTecnicaForm
+            // 
+            this.btnAbrirFichaTecnicaForm.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.btnAbrirFichaTecnicaForm.FlatAppearance.BorderSize = 0;
+            this.btnAbrirFichaTecnicaForm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAbrirFichaTecnicaForm.Location = new System.Drawing.Point(109, 180);
+            this.btnAbrirFichaTecnicaForm.Margin = new System.Windows.Forms.Padding(4);
+            this.btnAbrirFichaTecnicaForm.Name = "btnAbrirFichaTecnicaForm";
+            this.btnAbrirFichaTecnicaForm.Size = new System.Drawing.Size(359, 58);
+            this.btnAbrirFichaTecnicaForm.TabIndex = 1;
+            this.btnAbrirFichaTecnicaForm.Text = "Crear ficha técnica";
+            this.btnAbrirFichaTecnicaForm.UseVisualStyleBackColor = false;
+            this.btnAbrirFichaTecnicaForm.Click += new System.EventHandler(this.btnAbrirFichaTecnicaForm_Click);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
+            this.label2.Location = new System.Drawing.Point(133, 393);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(322, 20);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "Desarrollado por Sergio Correa y Carlos Ortigoza";
+            // 
+            // MenuPrincipal
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 28F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(584, 435);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.btnAbrirFichaTecnicaForm);
+            this.Controls.Add(this.label1);
+            this.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.Margin = new System.Windows.Forms.Padding(4);
+            this.Name = "MenuPrincipal";
             this.Text = "MenuPrincipal";
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
         }
 
         #endregion
+
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btnAbrirFichaTecnicaForm;
+        private System.Windows.Forms.Label label2;
     }
 }

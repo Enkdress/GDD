@@ -1,9 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Text;
+﻿using GDD.VISTA.vista_ficha_tecnica;
+using System;
 using System.Windows.Forms;
 
 namespace GDD.VISTA
@@ -13,6 +9,12 @@ namespace GDD.VISTA
         public MenuPrincipal()
         {
             InitializeComponent();
+        }
+
+        private void btnAbrirFichaTecnicaForm_Click(object sender, EventArgs e)
+        {
+            FichaTecnica sf = new FichaTecnica();
+            sf.Show();
         }
     }
 }
