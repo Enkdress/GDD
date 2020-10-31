@@ -8,15 +8,19 @@ namespace GDD.VISTA.vista_ficha_tecnica
 {
     public partial class FichaTecnica :Form
     {
+        CFichaTecnica cFichaTecnica;
         public FichaTecnica()
         {
             InitializeComponent();
+            cFichaTecnica = new CFichaTecnica();
+
         }
 
         private void btnCrearFicha_Click(object sender, EventArgs e)
         {
             string path = Environment.GetEnvironmentVariable("userprofile") + "/Desktop";
             
+            cFichaTecnica.CrearFicha(obtenerDatos(), path);
         }
 
         private List<string[]> obtenerDatos()
