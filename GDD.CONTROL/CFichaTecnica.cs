@@ -1,8 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Collections.Generic;
 using GDD.MODELO;
 
+/// <summary>
+/// @author carlos ortigoza, sergio correa
+/// </summary>
 namespace GDD.CONTROL
 {
     public class CFichaTecnica
@@ -15,10 +16,8 @@ namespace GDD.CONTROL
         {
             int i = 0;
             foreach (string[] arr in datos) {
-                i = 0;
                 if ( i == 0 )
                 {
-                    // nombreJuego, ambiente, estilo, publicoDirigido, creadores
                     ficha.NombreJuego = arr[0];
                     ficha.Ambientacion = arr[1];
                     ficha.Estilo = arr[2];
@@ -32,10 +31,11 @@ namespace GDD.CONTROL
                     ficha.Sonido = arr;
                 }
 
-                ficha.GuardarPDF(path);
+               
 
                 i++;
             }
+            ficha.GuardarPDF(path);
         }
     }
 }
