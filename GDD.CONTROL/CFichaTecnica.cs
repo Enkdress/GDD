@@ -15,27 +15,28 @@ namespace GDD.CONTROL
         {
             int i = 0;
             foreach (string[] arr in datos) {
-                i = 0;
-                if ( i == 0 )
-                {
-                    // nombreJuego, ambiente, estilo, publicoDirigido, creadores
-                    ficha.NombreJuego = arr[0];
-                    ficha.Ambientacion = arr[1];
-                    ficha.Estilo = arr[2];
-                    ficha.Publico = arr[3];
-                    ficha.Creadores = arr[4];
-                } else if (i == 1)
-                {
-                    ficha.Genero = arr;
-                } else
-                {
-                    ficha.Sonido = arr;
-                }
+                 i = 0;
+                 if ( i == 0 )
+                 {
+                    //nombreJuego, ambiente, estilo, publicoDirigido, creadores
+                     Console.WriteLine(arr[0], arr[1], arr[2], arr[3]);
+                     ficha.NombreJuego = arr[0];
+                     ficha.Ambientacion = arr[1];
+                     ficha.Estilo = arr[2];
+                     ficha.Publico = arr[3];
+                     //ficha.Creadores = arr[4];
+                 } else if (i == 1)
+                 {
+                     ficha.Genero = arr;
+                 } else
+                 {
+                     ficha.Sonido = arr;
+                 }
 
-                ficha.GuardarPDF(path);
+                 ficha.GuardarPDF(path);
 
-                i++;
-            }
+                 i++;
+             }
         }
     }
 }
