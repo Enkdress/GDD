@@ -1,4 +1,5 @@
-﻿/// <summary>
+﻿using System;
+/// <summary>
 /// @author carlos ortigoza, sergio correa
 /// </summary>
 namespace GDD.MODELO
@@ -53,7 +54,22 @@ namespace GDD.MODELO
 
         public void GuardarPDF(string n)
         {
-            ArchivoPDF archivoPDF = new ArchivoPDF(n, _nombreJuego);
+            ArchivoPDF archivoPDF = new ArchivoPDF(n);
+            try
+            {
+                archivoPDF.addTitle(_nombreJuego);
+                archivoPDF.addParrafo("Ambientacion:"+_ambientacion+"\nPublico:"+_publico+"\nEstilo:"+_estilo+"\nCreadores:"+_creadores);
+                archivoPDF.addParrafos(_genero);
+                //archivoPDF.addParrafos(_sonido);
+            }
+            catch (Exception)
+            {
+
+            }
+            finally
+            {
+                archivoPDF.Cerrar();
+            }
         }
     }
 }
