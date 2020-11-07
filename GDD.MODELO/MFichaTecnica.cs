@@ -1,7 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
+﻿/// <summary>
+/// @author carlos ortigoza, sergio correa
+/// </summary>
 namespace GDD.MODELO
 {
     public class MFichaTecnica
@@ -54,11 +53,7 @@ namespace GDD.MODELO
 
         public void GuardarPDF(string n)
         {
-            ArchivoPDF archivoPDF = new ArchivoPDF(n);
-            archivoPDF.Abrir(n);
-            archivoPDF.addParrafo("Ficha tecnica", _genero, "fichatecnica.pdf");
-            archivoPDF.Mostrar(n);
-            archivoPDF.Cerrar();
+            ArchivoPDF archivoPDF = new ArchivoPDF(n, _nombreJuego);
         }
     }
 }

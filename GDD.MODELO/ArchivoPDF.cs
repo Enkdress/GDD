@@ -1,9 +1,8 @@
-﻿using System;
-using System.IO;
-using System.Diagnostics;
-using iText.Kernel.Pdf;
+﻿using iText.Kernel.Pdf;
 using iText.Layout;
 using iText.Layout.Element;
+using iText.Layout.Properties;
+using System;
 
 /// <summary>
 /// @author carlos ortigoza, sergio correa
@@ -13,33 +12,30 @@ namespace GDD.MODELO
 {
     public class ArchivoPDF
     {
-        private  String nombre;
-        private  Document documento;
-        private  PdfDocument pdfDoc;
+        private String path;
+        public ArchivoPDF(string n, String title)
+        {
+            path = n;
+            PdfWriter writer = new PdfWriter(path);
+            PdfDocument pdf = new PdfDocument(writer);
+            Document document = new Document(pdf);
+            try
+            {
+                pdf.AddNewPage();
+                Paragraph header = new Paragraph(title)
+                   .SetTextAlignment(TextAlignment.CENTER)
+                   .SetFontSize(20);
 
-        public ArchivoPDF(String n) {
-            nombre = n;
-        }
-        public FileInfo Abrir(string destino) {
-            FileInfo file = new FileInfo(destino);
-            file.Delete();
-            var fileStream = file.Create();
-            fileStream.Close();
-            return file;//return path para escribir el pdf
-        }
-        public void addParrafo(string titulo, string[] parrafo, string filename) {
-            PdfDocument pdfdoc = new PdfDocument(new PdfWriter(filename));
-            Document document = new Document(pdfdoc);
-            foreach (var para in parrafo) {
-                document.Add(new Paragraph(para));
+                document.Add(header);
             }
-        }
-        public void Cerrar() {
-            documento.Close();
-        }
-
-        public void Mostrar(string ruta) {
-            Process.Start(ruta);
+            catch (Exception)
+            {
+                //normal only pass
+            }
+            finally
+            {
+                document.Close();
+            }
         }
     }
 }

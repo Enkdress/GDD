@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Windows.Forms;
 using GDD.CONTROL;
 
@@ -18,8 +17,7 @@ namespace GDD.VISTA.vista_ficha_tecnica
 
         private void btnCrearFicha_Click(object sender, EventArgs e)
         {
-            string path = Environment.GetEnvironmentVariable("userprofile") + "/Desktop";
-            
+            string path = Environment.GetEnvironmentVariable("userprofile") + "/Desktop/" + txtNombreJuego.Text + ".pdf";
             cFichaTecnica.CrearFicha(obtenerDatos(), path);
         }
 
@@ -29,12 +27,11 @@ namespace GDD.VISTA.vista_ficha_tecnica
             string creadores = txtCreadores.Text;
             string nombreJuego = txtNombreJuego.Text;
             string publicoDirigido = cbxPublico.Text;
-
             string estilo = "";
             if ( rbtn3D.Checked ) estilo = "3D";
-            else if ( rbtn2D.Checked ) estilo = "2D";
-            else if ( rbtnPixelArt.Checked ) estilo = "PixelArt";
-            else if ( rbtnRealista.Checked ) estilo = "Realista";
+            if ( rbtn2D.Checked ) estilo = "2D";
+            if ( rbtnPixelArt.Checked ) estilo = "PixelArt";
+            if ( rbtnRealista.Checked ) estilo = "Realista";
 
             string[] genero = new string[6];
             if ( chbxPlataformas.Checked ) genero[0] = "Plataformas";
