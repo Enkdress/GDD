@@ -1,7 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
+﻿/// <summary>
+/// @author carlos ortigoza, sergio correa
+/// </summary>
 namespace GDD.MODELO
 {
     public class MFichaTecnica

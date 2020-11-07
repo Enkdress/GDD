@@ -13,24 +13,29 @@ namespace GDD.MODELO
     public class ArchivoPDF
     {
         private String path;
-        public ArchivoPDF(string n, String title) {
+        public ArchivoPDF(string n, String title)
+        {
             path = n;
             PdfWriter writer = new PdfWriter(path);
             PdfDocument pdf = new PdfDocument(writer);
             Document document = new Document(pdf);
-            try {
+            try
+            {
                 pdf.AddNewPage();
                 Paragraph header = new Paragraph(title)
                    .SetTextAlignment(TextAlignment.CENTER)
                    .SetFontSize(20);
 
                 document.Add(header);
-            } catch (Exception) {
+            }
+            catch (Exception)
+            {
                 //normal only pass
-            } finally {
+            }
+            finally
+            {
                 document.Close();
             }
         }
-    
     }
 }
