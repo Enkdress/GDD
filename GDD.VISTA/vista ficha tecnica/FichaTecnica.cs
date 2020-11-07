@@ -34,18 +34,18 @@ namespace GDD.VISTA.vista_ficha_tecnica
             if ( rbtnRealista.Checked ) estilo = "Realista";
 
             string[] genero = new string[6];
-            if ( chbxPlataformas.Checked ) genero[0] = "Plataformas";
-            if ( chbxDeportes.Checked ) genero[1] = "Deportes";
-            if ( chbxCarreras.Checked ) genero[2] = "Carreras";
-            if ( chbxLucha.Checked ) genero[3] = "Lucha";
-            if ( chbxEstrategia.Checked ) genero[4] = "Estrategia";
-            if ( chbxArcade.Checked ) genero[5] = "Arcade";
+            if (chbxPlataformas.Checked) genero[0] = "Plataformas";
+            if (chbxDeportes.Checked) genero[1] = "Deportes";
+            if (chbxCarreras.Checked) genero[2] = "Carreras";
+            if (chbxLucha.Checked) genero[3] = "Lucha";
+            if (chbxEstrategia.Checked) genero[4] = "Estrategia";
+            if (chbxArcade.Checked) genero[5] = "Arcade";
 
             string[] sonido = new string[4];
-            if ( chbxRetro.Checked ) sonido[0] = "Retro";
-            if ( chbxRealista.Checked ) sonido[1] = "Realista";
-            if ( chbxElectronico.Checked ) sonido[2] = "Electronico";
-            if ( chbxBanda.Checked ) sonido[3] = "Banda";
+            if (chbxRetro.Checked) sonido[0] = "Retro";
+            if (chbxRealista.Checked) sonido[1] = "Realista";
+            if (chbxElectronico.Checked) sonido[2] = "Electronico";
+            if (chbxBanda.Checked) sonido[3] = "Banda";
 
             string[] _ = { nombreJuego, ambiente, estilo, publicoDirigido, creadores };
             List<string[]> datos = new List<string[]>();
