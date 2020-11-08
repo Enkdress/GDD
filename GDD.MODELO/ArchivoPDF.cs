@@ -2,7 +2,6 @@
 using iText.Layout;
 using iText.Layout.Element;
 using iText.Layout.Properties;
-using System;
 
 /// <summary>
 /// @author carlos ortigoza, sergio correa
@@ -12,30 +11,42 @@ namespace GDD.MODELO
 {
     public class ArchivoPDF
     {
-        private String path;
-        public ArchivoPDF(string n, String title)
+        private Document documento;
+        private PdfWriter escribir;
+        private PdfDocument pdf;
+        public ArchivoPDF(string n)
         {
-            path = n;
-            PdfWriter writer = new PdfWriter(path);
-            PdfDocument pdf = new PdfDocument(writer);
-            Document document = new Document(pdf);
-            try
-            {
-                pdf.AddNewPage();
-                Paragraph header = new Paragraph(title)
-                   .SetTextAlignment(TextAlignment.CENTER)
-                   .SetFontSize(20);
+            escribir = new PdfWriter(n);
+            pdf = new PdfDocument(escribir);
+            documento = new Document(pdf);
+            pdf.AddNewPage();
+        }
 
-                document.Add(header);
+        public void addTitle(string titulo) {
+            Paragraph PDFtitulo = new Paragraph(titulo)
+               .SetTextAlignment(TextAlignment.CENTER)
+               .SetFontSize(22);
+            documento.Add(PDFtitulo);
+        }
+        
+        public void addParrafo(string parrafo)
+        {
+            pdf.AddNewPage();
+            Paragraph PDFParrafo = new Paragraph(parrafo)
+               .SetTextAlignment(TextAlignment.LEFT)
+               .SetFontSize(20);
+            documento.Add(PDFParrafo);
+        }
+
+        public void addParrafos(string[] parrafos) {
+            pdf.SetTagged();
+            foreach (var parrafo in parrafos) {
+                documento.Add(new Paragraph(parrafo));
             }
-            catch (Exception)
-            {
-                //normal only pass
-            }
-            finally
-            {
-                document.Close();
-            }
+        }
+        public void Cerrar()
+        {
+            documento.Close();
         }
     }
 }
