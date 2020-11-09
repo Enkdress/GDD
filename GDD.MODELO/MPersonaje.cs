@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using System.IO;
 
 namespace GDD.MODELO
 {
@@ -11,11 +8,18 @@ namespace GDD.MODELO
         private string _nombre;
         private string _participacion;
         private string _arquetipo;
-        private string _path = "./per.dat";
 
         public string Nombre
         {
             get => _nombre;
+        }
+        public string Participacion
+        {
+            get => _participacion;
+        }
+        public string Arquetipo
+        {
+            get => _arquetipo;
         }
 
         public MPersonaje(string n, string participacion, string arquetipo)
@@ -23,22 +27,6 @@ namespace GDD.MODELO
             this._nombre = n;
             this._participacion = participacion;
             this._arquetipo = arquetipo;
-        }
-        public void Guardar()
-        {
-
-        }
-        public void Modificar(string param, string valor, string nombrePj)
-        {
-
-        }
-        public void Eliminar(string valor, string nombrePj)
-        {
-
-        }
-        public void Mostrar()
-        {
-
         }
     }
 }

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PersonajeItem));
             this.lblNombre = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -38,66 +39,39 @@
             // 
             // lblNombre
             // 
-            this.lblNombre.AutoSize = true;
-            this.lblNombre.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblNombre.Location = new System.Drawing.Point(38, 13);
+            resources.ApplyResources(this.lblNombre, "lblNombre");
             this.lblNombre.Name = "lblNombre";
-            this.lblNombre.Size = new System.Drawing.Size(164, 20);
-            this.lblNombre.TabIndex = 0;
-            this.lblNombre.Text = "Nombre del personaje";
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(-294, -77);
+            resources.ApplyResources(this.label1, "label1");
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(164, 20);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Nombre del personaje";
             // 
             // label2
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(38, 52);
+            resources.ApplyResources(this.label2, "label2");
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(83, 20);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "Arquetipo: ";
             // 
             // label3
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label3.Location = new System.Drawing.Point(38, 82);
+            resources.ApplyResources(this.label3, "label3");
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(101, 20);
-            this.label3.TabIndex = 0;
-            this.label3.Text = "Participación: ";
             // 
             // lblParticipacion
             // 
-            this.lblParticipacion.AutoSize = true;
-            this.lblParticipacion.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblParticipacion.Location = new System.Drawing.Point(136, 82);
+            resources.ApplyResources(this.lblParticipacion, "lblParticipacion");
             this.lblParticipacion.Name = "lblParticipacion";
-            this.lblParticipacion.Size = new System.Drawing.Size(0, 20);
-            this.lblParticipacion.TabIndex = 0;
             // 
             // lblArquetipo
             // 
-            this.lblArquetipo.AutoSize = true;
-            this.lblArquetipo.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblArquetipo.Location = new System.Drawing.Point(119, 52);
+            resources.ApplyResources(this.lblArquetipo, "lblArquetipo");
             this.lblArquetipo.Name = "lblArquetipo";
-            this.lblArquetipo.Size = new System.Drawing.Size(0, 20);
-            this.lblArquetipo.TabIndex = 0;
             // 
             // PersonajeItem
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.PaleTurquoise;
             this.Controls.Add(this.lblArquetipo);
             this.Controls.Add(this.lblParticipacion);
             this.Controls.Add(this.label3);
@@ -105,7 +79,6 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lblNombre);
             this.Name = "PersonajeItem";
-            this.Size = new System.Drawing.Size(263, 127);
             this.ResumeLayout(false);
             this.PerformLayout();
 
