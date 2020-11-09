@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Text;
+﻿using GDD.CONTROL;
 using System.Windows.Forms;
 
 namespace GDD.VISTA.vista_pasajero
@@ -13,7 +8,20 @@ namespace GDD.VISTA.vista_pasajero
         public Personaje()
         {
             InitializeComponent();
+            // read the document where the personajes will be saved
+            // then creat a PersonajeItem for all of them
+        }
 
+        private void button1_Click(object sender, System.EventArgs e)
+        {
+            CPersonaje pj = new CPersonaje();
+            pj.GuardadPersonaje();
+        }
+
+        private void button2_Click(object sender, System.EventArgs e)
+        {
+            CPersonaje pj = new CPersonaje();
+            pj.MostrarPersonaje();
         }
     }
 }

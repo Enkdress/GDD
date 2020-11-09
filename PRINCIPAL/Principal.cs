@@ -1,6 +1,8 @@
 ﻿using System;
 using System.IO;
+using System.Text;
 using GDD.VISTA;
+using iText.IO.Util;
 
 namespace PRINCIPAL
 {

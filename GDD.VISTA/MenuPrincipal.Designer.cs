@@ -31,6 +31,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.btnAbrirFichaTecnicaForm = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
+            this.btnPersonajes = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -68,11 +69,26 @@
             this.label2.TabIndex = 2;
             this.label2.Text = "Desarrollado por Sergio Correa y Carlos Ortigoza";
             // 
+            // btnPersonajes
+            // 
+            this.btnPersonajes.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.btnPersonajes.FlatAppearance.BorderSize = 0;
+            this.btnPersonajes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPersonajes.Location = new System.Drawing.Point(109, 267);
+            this.btnPersonajes.Margin = new System.Windows.Forms.Padding(4);
+            this.btnPersonajes.Name = "btnPersonajes";
+            this.btnPersonajes.Size = new System.Drawing.Size(359, 58);
+            this.btnPersonajes.TabIndex = 1;
+            this.btnPersonajes.Text = "Personajes";
+            this.btnPersonajes.UseVisualStyleBackColor = false;
+            this.btnPersonajes.Click += new System.EventHandler(this.btnPersonajes_Click);
+            // 
             // MenuPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 28F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(584, 435);
+            this.ClientSize = new System.Drawing.Size(595, 509);
+            this.Controls.Add(this.btnPersonajes);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.btnAbrirFichaTecnicaForm);
             this.Controls.Add(this.label1);
@@ -90,5 +106,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnAbrirFichaTecnicaForm;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button btnPersonajes;
     }
 }
