@@ -17,9 +17,8 @@ namespace GDD.VISTA
             InitializeComponent();
         }
 
-        public void s() { 
-            
+        private void btnAgregarGDD_Click(object sender, EventArgs e) {
+            //aqui abrira componente para crear gdd
         }
-
     }
 }
