@@ -21,7 +21,7 @@ namespace newGDD.Vista.Dashboard
             string nombreDocumento = textBox1.Text;
             
             string ubicacionDocumento = "./Documentos/" + nombreDocumento + "/data.dat";
-            Lib.Fichero.ModificarArchivo(ubicacionDocumento, );
+            //Lib.Fichero.ModificarArchivo(ubicacionDocumento, );
             //textBox1
             //button1
             // ./Documentos/`nombre`/data.dat

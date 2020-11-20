@@ -5,6 +5,7 @@ using System.IO;
 using System.Runtime.Serialization;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.Text;
+using System.Windows.Forms;
 
 namespace newGDD.Lib
 {
@@ -43,21 +44,30 @@ namespace newGDD.Lib
         public static List<IDocumentoDeJuego> RetornarDocumentos()
         {
             List<IDocumentoDeJuego> gdds = new List<IDocumentoDeJuego>();
-            var files = Directory.GetFiles("./Documentos", "*.dat*", SearchOption.AllDirectories);
-            foreach (var file in files)
+            try
             {
-                using (Stream fs = new FileStream(file, FileMode.OpenOrCreate, FileAccess.Read))
+                var files = Directory.GetFiles("./Documentos", "*.dat*", SearchOption.AllDirectories);
+                foreach (var file in files)
                 {
-                    try
+                    using (Stream fs = new FileStream(file, FileMode.OpenOrCreate, FileAccess.Read))
                     {
-                        gdds.Add((IDocumentoDeJuego)formatter.Deserialize(fs));
-                    }
-                    catch (Exception)
-                    {
-                        Console.WriteLine("Error al serializar. Archivo vacío");
+                        try
+                        {
+                            gdds.Add((IDocumentoDeJuego)formatter.Deserialize(fs));
+                        }
+                        catch (Exception)
+                        {
+                            Console.WriteLine("Error al serializar. Archivo vacío");
+                        }
                     }
                 }
             }
+            catch (DirectoryNotFoundException notFound)
+            {
+                Console.WriteLine(notFound.Message);
+                Directory.CreateDirectory("./Documentos");
+            }
+            
             return gdds;
         }
 
