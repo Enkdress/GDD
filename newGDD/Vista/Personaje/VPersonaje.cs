@@ -1,21 +1,21 @@
-﻿using newGDD.Interfaces;
+﻿using newGDD.Controlador;
+using System.Collections.Generic;
 using System.Windows.Forms;
 
 namespace newGDD.Vista.Personaje
 {
     public partial class VPersonaje : Form
     {
-        private IDocumentoDeJuego documento;
-        private IPersonaje[] personajes;
+        private DocumentoDeJuego documento;
+        private List<Controlador.Personaje> personajes;
         public VPersonaje()
         {
             InitializeComponent();
         }
 
-        public VPersonaje(IDocumentoDeJuego documento)
+        public VPersonaje(DocumentoDeJuego documento)
         {
             this.documento = documento;
-            this.personajes = this.documento.Personajes;
 
             foreach(var personaje in this.personajes)
             {

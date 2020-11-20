@@ -1,13 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
+using newGDD.Modelo;
 
 namespace newGDD.Interfaces
 {
     public interface IDocumentoDeJuego
     { 
-        Modelo.Personaje[] Personajes { get; set; }
-        Modelo.FichaTecnica FichaTecnica { get; set; }
+        List<Personaje> Personajes { get; set; }
+        FichaTecnica FichaTecnica { get; set; }
+        Guion Guion { get; set; }
         string Nombre { get; set; }
         string Path { get; set; }
         string FechaCreacion { get; set; }

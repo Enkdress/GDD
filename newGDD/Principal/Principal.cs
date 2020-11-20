@@ -1,7 +1,6 @@
-﻿using newGDD.Lib;
-using newGDD.Vista.Componentes;
+﻿using newGDD.Controlador;
+using newGDD.Vista.Dashboard;
 using System;
-using System.Collections.Generic;
 using System.Windows.Forms;
 
 namespace newGDD.Principal
@@ -11,30 +10,20 @@ namespace newGDD.Principal
         public Principal()
         {
             InitializeComponent();
-            try
-            {
-                pnlDocumentos.Controls.Clear();
-                  var documentos = Fichero.RetornarDocumentos();
-                List<ItemDocumento> items = new List<ItemDocumento>();
-                foreach(var doc in documentos)
-                {
-                    ItemDocumento newPj = new ItemDocumento(doc);
-                    newPj.Location = new System.Drawing.Point((documentos.IndexOf(doc) * (newPj.Height + 20)), 0);
-                    items.Add(newPj);
-                }
-
-                pnlDocumentos.Controls.AddRange(items.ToArray());
-            }
-            catch (Exception e)
-            {
-                MessageBox.Show("Ocurrió un error: " + e, "Error");
-                throw;
-            }
+            Dashboard ds = new Dashboard();
+            pnlDocumentos = ds.AgregarItemDocumento(pnlDocumentos);
         }
 
         private void btnAgregarDoc_Click(object sender, EventArgs e)
         {
+            CrearDocumento cd = new CrearDocumento();
+            cd.Show();
+        }
 
+        private void pnlDocumentos_Enter(object sender, EventArgs e)
+        {
+            Dashboard ds = new Dashboard();
+            pnlDocumentos = ds.AgregarItemDocumento(pnlDocumentos);
         }
     }
 }

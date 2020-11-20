@@ -1,4 +1,5 @@
-﻿using System;
+﻿using newGDD.Interfaces;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -11,17 +12,19 @@ namespace newGDD.Vista.Dashboard
 {
     public partial class CrearDocumento : Form
     {
+        private Controlador.DocumentoDeJuego documento;
         public CrearDocumento()
         {
             InitializeComponent();
+            
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            string nombreDocumento = textBox1.Text;
+            documento = new Controlador.DocumentoDeJuego(textBox1.Text);
             
-            string ubicacionDocumento = "./Documentos/" + nombreDocumento + "/data.dat";
-            //Lib.Fichero.ModificarArchivo(ubicacionDocumento, );
+            string ubicacionDocumento = "./Documentos/" + documento.Documento.Nombre + "/data.dat";
+            Lib.Fichero.ModificarArchivo(ubicacionDocumento, documento.Documento);
             //textBox1
             //button1
             // ./Documentos/`nombre`/data.dat

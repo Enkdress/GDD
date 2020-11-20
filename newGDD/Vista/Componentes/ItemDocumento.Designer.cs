@@ -158,6 +158,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.Controls.Add(this.lnkRecursos);
             this.Controls.Add(this.btnGuion);
             this.Controls.Add(this.btnPersonajes);
@@ -169,7 +170,7 @@
             this.Controls.Add(this.lblNombreDoc);
             this.Controls.Add(this.imgDoc);
             this.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.Margin = new System.Windows.Forms.Padding(5);
             this.Name = "ItemDocumento";
             this.Size = new System.Drawing.Size(417, 399);
             ((System.ComponentModel.ISupportInitialize)(this.imgDoc)).EndInit();

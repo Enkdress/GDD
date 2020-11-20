@@ -4,7 +4,7 @@ using System.Text;
 
 namespace newGDD.Controlador
 {
-    class FichaTecnica
+    public class FichaTecnica
     {
         private Modelo.FichaTecnica mFicha;
         public FichaTecnica()

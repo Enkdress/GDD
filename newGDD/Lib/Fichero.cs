@@ -1,10 +1,9 @@
-﻿using newGDD.Interfaces;
+﻿using newGDD.Modelo;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Runtime.Serialization;
 using System.Runtime.Serialization.Formatters.Binary;
-using System.Text;
 using System.Windows.Forms;
 
 namespace newGDD.Lib
@@ -41,9 +40,9 @@ namespace newGDD.Lib
             return objects;
         }
 
-        public static List<IDocumentoDeJuego> RetornarDocumentos()
+        public static List<DocumentoDeJuego> RetornarDocumentos()
         {
-            List<IDocumentoDeJuego> gdds = new List<IDocumentoDeJuego>();
+            List<DocumentoDeJuego> gdds = new List<DocumentoDeJuego>();
             try
             {
                 var files = Directory.GetFiles("./Documentos", "*.dat*", SearchOption.AllDirectories);
@@ -53,7 +52,7 @@ namespace newGDD.Lib
                     {
                         try
                         {
-                            gdds.Add((IDocumentoDeJuego)formatter.Deserialize(fs));
+                            gdds.Add((DocumentoDeJuego)formatter.Deserialize(fs));
                         }
                         catch (Exception)
                         {
@@ -71,7 +70,7 @@ namespace newGDD.Lib
             return gdds;
         }
 
-        // 
+        // ./Documentos/nombregdd/data.dat
         // Resumen: 
         //    Modifica un archivo que se encuentra en una ruta
         //
@@ -83,9 +82,28 @@ namespace newGDD.Lib
         //
         public static void  ModificarArchivo(string path, object item )
         {
-            using (Stream fs = new FileStream(path, FileMode.OpenOrCreate, FileAccess.Write))
+            try
             {
-                formatter.Serialize(fs, item);
+                if (Directory.Exists(path.Split("/")[0] + "/" + path.Split("/")[1] + "/" + path.Split("/")[2]))
+                {
+                    using (Stream fs = new FileStream(path, FileMode.OpenOrCreate, FileAccess.Write))
+                    {
+                        formatter.Serialize(fs, item);
+                    }
+                } else
+                {
+                    Directory.CreateDirectory(path.Split("/")[0] + "/" + path.Split("/")[1] + "/" + path.Split("/")[2]);
+                    using (Stream fs = new FileStream(path, FileMode.OpenOrCreate, FileAccess.Write))
+                    {
+                        formatter.Serialize(fs, item);
+                    }
+                }
+                
+            }
+            catch (Exception e)
+            {
+                
+                Console.WriteLine(e.Message);
             }
         }
     }

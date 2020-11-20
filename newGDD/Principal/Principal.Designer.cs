@@ -39,10 +39,10 @@
             // 
             this.pnlDocumentos.BackColor = System.Drawing.Color.LightGray;
             this.pnlDocumentos.Dock = System.Windows.Forms.DockStyle.Right;
-            this.pnlDocumentos.Location = new System.Drawing.Point(-28, 0);
+            this.pnlDocumentos.Location = new System.Drawing.Point(320, 0);
             this.pnlDocumentos.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.pnlDocumentos.Name = "pnlDocumentos";
-            this.pnlDocumentos.Size = new System.Drawing.Size(1199, 629);
+            this.pnlDocumentos.Size = new System.Drawing.Size(851, 629);
             this.pnlDocumentos.TabIndex = 0;
             // 
             // pnlOpciones
@@ -93,6 +93,9 @@
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Name = "Principal";
             this.Text = "Principalcs";
+            this.Activated += new System.EventHandler(this.pnlDocumentos_Enter);
+            this.Enter += new System.EventHandler(this.pnlDocumentos_Enter);
+            this.Leave += new System.EventHandler(this.pnlDocumentos_Enter);
             this.pnlOpciones.ResumeLayout(false);
             this.pnlOpciones.PerformLayout();
             this.ResumeLayout(false);
