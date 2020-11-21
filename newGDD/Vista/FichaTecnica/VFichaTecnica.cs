@@ -8,38 +8,26 @@ namespace newGDD.Vista.FichaTecnica
     public partial class VFichaTecnica : Form
     {
         private Controlador.FichaTecnica cFichaTecnica;
+        private List<string[]> fichaCargada;
         private string pathDocument;
-
-        //public VFichaTecnica()
-        //{
-        //    InitializeComponent();
-        //    cFichaTecnica = new Controlador.FichaTecnica();
-        //    // inicializar el valor de los campos del formulario con los que están en el archivo
-        //    //txtNombre.Text = documento.FichaTecnica.Nombre;
-        //    //txtCreadores.Text = documento.FichaTecnica.Creadores;
-        //    //txtAmbientacion.Text = documento.FichaTecnica.Ambientacion;
-
-        //}
 
         public VFichaTecnica(string path)
         {
             pathDocument = path;
             InitializeComponent();
-            cFichaTecnica = new Controlador.FichaTecnica();
-        }
-
-        private void guardar(object sender, EventArgs e)
-        {
-            //FolderBrowserDialog fbd = new FolderBrowserDialog();
-            //fbd.ShowDialog();
-            //MessageBox.Show(fbd.SelectedPath);
-            //Lib.ArchivoPDF pdf = new Lib.ArchivoPDF(fbd.SelectedPath);
-            //MessageBox.Show("al cerrar");
+            cFichaTecnica = new Controlador.FichaTecnica(path);
+            fichaCargada = cFichaTecnica.cargarFicha();
+            if (fichaCargada.Count != 0) {
+                txtNombre.Text = fichaCargada[0][0];
+                txtCreadores.Text = fichaCargada[0][1];
+                txtAmbientacion.Text = fichaCargada[0][2];
+            }
         }
 
         private void tlpGuardarPDF_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
         {
-            string path = Environment.GetEnvironmentVariable("userprofile") + "/Desktop/" + txtNombre.Text + ".pdf";
+            string folderDefault = pathDocument.Split("/")[0] + "/" + pathDocument.Split("/")[1] + "/" + pathDocument.Split("/")[2] + "/";
+            string path = folderDefault + txtNombre.Text + ".pdf";
             string estilo = "";
             if (rd3d.Checked) estilo = "3D";
             if (rd2d.Checked) estilo = "2D";
@@ -69,7 +57,6 @@ namespace newGDD.Vista.FichaTecnica
                 genero,
                 sonido, 
                 path);
-           // MessageBox.Show("al hacer click en guardar");
         }
 
         private void btnAceptar_Click(object sender, EventArgs e)
@@ -103,7 +90,6 @@ namespace newGDD.Vista.FichaTecnica
                 genero,
                 sonido,
                 pathDocument);
-            //MessageBox.Show("al hacer click guardar en archivo, pero no creare");
         }
     }
 }
