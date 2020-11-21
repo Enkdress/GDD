@@ -153,6 +153,7 @@
             this.lnkRecursos.TabStop = true;
             this.lnkRecursos.Text = "Recursos";
             this.lnkRecursos.VisitedLinkColor = System.Drawing.Color.DeepSkyBlue;
+            this.lnkRecursos.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lnkRecursos_LinkClicked);
             // 
             // ItemDocumento
             // 
