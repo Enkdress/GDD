@@ -1,24 +1,18 @@
-﻿using System;
+﻿using newGDD.Lib;
 using System.Collections.Generic;
-using System.Text;
-using newGDD.Lib;
 
 namespace newGDD.Controlador
 {
     public class FichaTecnica
     {
         private string docPath;
-        private Modelo.FichaTecnica mFicha;
         private Modelo.DocumentoDeJuego documento;
+        private Modelo.FichaTecnica mFicha;
 
-        public FichaTecnica()
-        {
-            mFicha = new Modelo.FichaTecnica();
-        }
         public FichaTecnica(string path)
         {
             mFicha = new Modelo.FichaTecnica();
-            mFicha.PdfPath = path;
+            docPath = path;
         }
         
         public void CrearFicha(
@@ -52,16 +46,40 @@ namespace newGDD.Controlador
                string[] sonido,
                string path)
         {
-            Modelo.FichaTecnica ficha = new Modelo.FichaTecnica();
-            ficha.Ambientacion = ambientacion;
-            ficha.Creadores =  creadores;
-            ficha.Nombre = nombre;
-            ficha.Publico = publico;
-            ficha.Estilo = estilo;
-            ficha.Genero = genero;
-            ficha.Sonidos = sonido;
-            ficha.PdfPath = path;
+            documento = (Modelo.DocumentoDeJuego)Fichero.LeerArchivo(this.docPath);
+            mFicha.Ambientacion = ambientacion;
+            mFicha.Creadores = creadores;
+            mFicha.Nombre = nombre;
+            mFicha.Publico = publico;
+            mFicha.Estilo = estilo;
+            mFicha.Genero = genero;
+            mFicha.Sonidos = sonido;
+            mFicha.PdfPath = path;
+
+            documento.FichaTecnica = mFicha;
+            Fichero.ModificarArchivo(docPath, this.documento);
         }
 
+        public List<string[]> cargarFicha() {
+            documento = (Modelo.DocumentoDeJuego)Fichero.LeerArchivo(this.docPath);
+            List<string[]> datos = new List<string[]>();
+            if (documento.FichaTecnica != null) {
+                mFicha = documento.FichaTecnica;
+                string[] _ = {
+                    documento.FichaTecnica.Nombre,
+                    documento.FichaTecnica.Creadores,
+                    documento.FichaTecnica.Ambientacion,
+                    documento.FichaTecnica.Estilo,
+                    documento.FichaTecnica.PdfPath,
+                    documento.FichaTecnica.Publico
+
+                };
+                datos.Add(_);
+                datos.Add(documento.FichaTecnica.Genero);
+                datos.Add(documento.FichaTecnica.Sonidos);
+            }
+            
+            return datos;
+        }
     }
 }
