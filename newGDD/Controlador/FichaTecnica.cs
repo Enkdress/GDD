@@ -1,12 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using newGDD.Lib;
 
 namespace newGDD.Controlador
 {
     public class FichaTecnica
     {
+        private string docPath;
         private Modelo.FichaTecnica mFicha;
+        private Modelo.DocumentoDeJuego documento;
+
         public FichaTecnica()
         {
             mFicha = new Modelo.FichaTecnica();
@@ -16,33 +20,47 @@ namespace newGDD.Controlador
             mFicha = new Modelo.FichaTecnica();
             mFicha.PdfPath = path;
         }
-        public void CrearFicha(List<string[]> datos, string path)
+        
+        public void CrearFicha(
+                string ambientacion,
+                string creadores,
+                string nombre,
+                string publico,
+                string estilo,
+                string [] genero,
+                string [] sonido,
+                string path)
         {
-            int i = 0;
-            foreach (string[] arr in datos)
-            {
-                if (i == 0)
-                {
-                    mFicha.Nombre = arr[0];
-                    mFicha.Ambientacion = arr[1];
-                    mFicha.Estilo = arr[2];
-                    mFicha.Publico = arr[3];
-                    mFicha.Creadores = arr[4];
-                }
-                else if (i == 1)
-                {
-                    mFicha.Genero = arr;
-                }
-                else
-                {
-                    mFicha.Sonidos = arr;
-                }
+            mFicha.Nombre = nombre;
+            mFicha.Ambientacion = ambientacion;
+            mFicha.Estilo = estilo;
+            mFicha.Publico = publico;
+            mFicha.Creadores = creadores;
+            mFicha.Genero = genero;
+            mFicha.Sonidos = sonido;
 
+            mFicha.GuardarPDF(path);    
+        }
 
-
-                i++;
-            }
-            mFicha.GuardarPDF(path);
+        public void GuardarFicha(
+               string ambientacion,
+               string creadores,
+               string nombre,
+               string publico,
+               string estilo,
+               string[] genero,
+               string[] sonido,
+               string path)
+        {
+            Modelo.FichaTecnica ficha = new Modelo.FichaTecnica();
+            ficha.Ambientacion = ambientacion;
+            ficha.Creadores =  creadores;
+            ficha.Nombre = nombre;
+            ficha.Publico = publico;
+            ficha.Estilo = estilo;
+            ficha.Genero = genero;
+            ficha.Sonidos = sonido;
+            ficha.PdfPath = path;
         }
 
     }

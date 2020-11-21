@@ -3,6 +3,7 @@ using System.Drawing;
 using System.Windows.Forms;
 using newGDD.Controlador;
 using newGDD.Vista.Personaje;
+using newGDD.Vista.FichaTecnica;
 
 namespace newGDD.Vista.Componentes
 {
@@ -27,7 +28,8 @@ namespace newGDD.Vista.Componentes
 
         private void btnFichaTecnica_Click(object sender, System.EventArgs e)
         {
-
+            VFichaTecnica fichaVista = new VFichaTecnica(this.documentPath);
+            fichaVista.Show();
         }
 
         private void btnPersonajes_Click(object sender, System.EventArgs e)
