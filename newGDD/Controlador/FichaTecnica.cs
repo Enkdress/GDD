@@ -33,7 +33,7 @@ namespace newGDD.Controlador
             mFicha.Genero = genero;
             mFicha.Sonidos = sonido;
 
-            mFicha.GuardarPDF(path);    
+            mFicha.GuardarPDF(path);
         }
 
         public void GuardarFicha(
