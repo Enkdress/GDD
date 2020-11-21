@@ -50,9 +50,17 @@
             this.btnAceptar = new System.Windows.Forms.Button();
             this.menuStrip2 = new System.Windows.Forms.MenuStrip();
             this.tlpGuardarPDF = new System.Windows.Forms.ToolStripMenuItem();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.chbxArcade = new System.Windows.Forms.CheckBox();
+            this.chbxEstrategia = new System.Windows.Forms.CheckBox();
+            this.chbxLucha = new System.Windows.Forms.CheckBox();
+            this.chbxCarreras = new System.Windows.Forms.CheckBox();
+            this.chbxDeportes = new System.Windows.Forms.CheckBox();
+            this.chbxPlataformas = new System.Windows.Forms.CheckBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.menuStrip2.SuspendLayout();
+            this.groupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -123,7 +131,7 @@
             this.groupBox1.Controls.Add(this.rdPixelart);
             this.groupBox1.Controls.Add(this.rd2d);
             this.groupBox1.Controls.Add(this.rd3d);
-            this.groupBox1.Location = new System.Drawing.Point(151, 416);
+            this.groupBox1.Location = new System.Drawing.Point(151, 405);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(498, 125);
             this.groupBox1.TabIndex = 5;
@@ -180,7 +188,7 @@
             this.groupBox2.Controls.Add(this.chxElectronico);
             this.groupBox2.Controls.Add(this.chxRealista);
             this.groupBox2.Controls.Add(this.chxRetiro);
-            this.groupBox2.Location = new System.Drawing.Point(151, 567);
+            this.groupBox2.Location = new System.Drawing.Point(151, 536);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(498, 125);
             this.groupBox2.TabIndex = 6;
@@ -256,12 +264,13 @@
             this.btnAceptar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAceptar.Font = new System.Drawing.Font("Georgia", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnAceptar.ForeColor = System.Drawing.Color.White;
-            this.btnAceptar.Location = new System.Drawing.Point(293, 723);
+            this.btnAceptar.Location = new System.Drawing.Point(291, 866);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(212, 66);
             this.btnAceptar.TabIndex = 7;
             this.btnAceptar.Text = "Aceptar";
             this.btnAceptar.UseVisualStyleBackColor = false;
+            this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
             // 
             // menuStrip2
             // 
@@ -271,7 +280,7 @@
             this.menuStrip2.Location = new System.Drawing.Point(0, 0);
             this.menuStrip2.Name = "menuStrip2";
             this.menuStrip2.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
-            this.menuStrip2.Size = new System.Drawing.Size(767, 28);
+            this.menuStrip2.Size = new System.Drawing.Size(778, 28);
             this.menuStrip2.TabIndex = 10;
             this.menuStrip2.Text = "menuStrip2";
             this.menuStrip2.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.tlpGuardarPDF_ItemClicked);
@@ -282,11 +291,87 @@
             this.tlpGuardarPDF.Size = new System.Drawing.Size(106, 24);
             this.tlpGuardarPDF.Text = "&Guardar &PDF";
             // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.chbxArcade);
+            this.groupBox3.Controls.Add(this.chbxEstrategia);
+            this.groupBox3.Controls.Add(this.chbxLucha);
+            this.groupBox3.Controls.Add(this.chbxCarreras);
+            this.groupBox3.Controls.Add(this.chbxDeportes);
+            this.groupBox3.Controls.Add(this.chbxPlataformas);
+            this.groupBox3.Location = new System.Drawing.Point(151, 667);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(498, 160);
+            this.groupBox3.TabIndex = 11;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Genero ";
+            // 
+            // chbxArcade
+            // 
+            this.chbxArcade.AutoSize = true;
+            this.chbxArcade.Location = new System.Drawing.Point(306, 126);
+            this.chbxArcade.Name = "chbxArcade";
+            this.chbxArcade.Size = new System.Drawing.Size(93, 28);
+            this.chbxArcade.TabIndex = 5;
+            this.chbxArcade.Text = "Arcade";
+            this.chbxArcade.UseVisualStyleBackColor = true;
+            // 
+            // chbxEstrategia
+            // 
+            this.chbxEstrategia.AutoSize = true;
+            this.chbxEstrategia.Location = new System.Drawing.Point(116, 126);
+            this.chbxEstrategia.Name = "chbxEstrategia";
+            this.chbxEstrategia.Size = new System.Drawing.Size(122, 28);
+            this.chbxEstrategia.TabIndex = 4;
+            this.chbxEstrategia.Text = "Estrategia";
+            this.chbxEstrategia.UseVisualStyleBackColor = true;
+            // 
+            // chbxLucha
+            // 
+            this.chbxLucha.AutoSize = true;
+            this.chbxLucha.Location = new System.Drawing.Point(306, 76);
+            this.chbxLucha.Name = "chbxLucha";
+            this.chbxLucha.Size = new System.Drawing.Size(87, 28);
+            this.chbxLucha.TabIndex = 3;
+            this.chbxLucha.Text = "Lucha";
+            this.chbxLucha.UseVisualStyleBackColor = true;
+            // 
+            // chbxCarreras
+            // 
+            this.chbxCarreras.AutoSize = true;
+            this.chbxCarreras.Location = new System.Drawing.Point(116, 76);
+            this.chbxCarreras.Name = "chbxCarreras";
+            this.chbxCarreras.Size = new System.Drawing.Size(108, 28);
+            this.chbxCarreras.TabIndex = 2;
+            this.chbxCarreras.Text = "Carreras";
+            this.chbxCarreras.UseVisualStyleBackColor = true;
+            // 
+            // chbxDeportes
+            // 
+            this.chbxDeportes.AutoSize = true;
+            this.chbxDeportes.Location = new System.Drawing.Point(306, 30);
+            this.chbxDeportes.Name = "chbxDeportes";
+            this.chbxDeportes.Size = new System.Drawing.Size(113, 28);
+            this.chbxDeportes.TabIndex = 1;
+            this.chbxDeportes.Text = "Deportes";
+            this.chbxDeportes.UseVisualStyleBackColor = true;
+            // 
+            // chbxPlataformas
+            // 
+            this.chbxPlataformas.AutoSize = true;
+            this.chbxPlataformas.Location = new System.Drawing.Point(116, 30);
+            this.chbxPlataformas.Name = "chbxPlataformas";
+            this.chbxPlataformas.Size = new System.Drawing.Size(140, 28);
+            this.chbxPlataformas.TabIndex = 0;
+            this.chbxPlataformas.Text = "Plataformas";
+            this.chbxPlataformas.UseVisualStyleBackColor = true;
+            // 
             // VFichaTecnica
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(767, 801);
+            this.ClientSize = new System.Drawing.Size(778, 957);
+            this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.btnAceptar);
             this.Controls.Add(this.txtPublico);
             this.Controls.Add(this.label5);
@@ -310,6 +395,8 @@
             this.groupBox2.PerformLayout();
             this.menuStrip2.ResumeLayout(false);
             this.menuStrip2.PerformLayout();
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -339,5 +426,12 @@
         private System.Windows.Forms.Button btnAceptar;
         private System.Windows.Forms.MenuStrip menuStrip2;
         private System.Windows.Forms.ToolStripMenuItem tlpGuardarPDF;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.CheckBox chbxLucha;
+        private System.Windows.Forms.CheckBox chbxCarreras;
+        private System.Windows.Forms.CheckBox chbxDeportes;
+        private System.Windows.Forms.CheckBox chbxPlataformas;
+        private System.Windows.Forms.CheckBox chbxArcade;
+        private System.Windows.Forms.CheckBox chbxEstrategia;
     }
 }
