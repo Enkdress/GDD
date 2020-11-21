@@ -1,10 +1,4 @@
-﻿using newGDD.Interfaces;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Text;
+﻿using System;
 using System.Windows.Forms;
 
 
@@ -25,12 +19,6 @@ namespace newGDD.Vista.Dashboard
             
             string ubicacionDocumento = "./Documentos/" + documento.Documento.Nombre + "/data.dat";
             Lib.Fichero.ModificarArchivo(ubicacionDocumento, documento.Documento);
-            //textBox1
-            //button1
-            // ./Documentos/`nombre`/data.dat
-            // Controlador: pasarle los atributos {nombre}{personajes}{ficha}
-            // Controlador: retornar un objeto del modelo DocumentoDeJuego
-            // Fichero: pasarle ese objeto y serializarlo en el archivo
         }
     }
 }

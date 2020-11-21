@@ -8,7 +8,8 @@ namespace newGDD.Vista.Componentes
 {
     public partial class ItemDocumento : UserControl
     {
-        DocumentoDeJuego documento;
+        private string documentPath;
+
         public ItemDocumento()
         {
             InitializeComponent();
@@ -21,6 +22,7 @@ namespace newGDD.Vista.Componentes
             //lblFechaCreacion.Text = fc;
             lblNombreDoc.Text = nd;
             //imgDoc.Image = Image.FromFile(@imagen);
+            this.documentPath = "./Documentos/"+nd+"/data.dat";
         }
 
         private void btnFichaTecnica_Click(object sender, System.EventArgs e)
@@ -30,14 +32,8 @@ namespace newGDD.Vista.Componentes
 
         private void btnPersonajes_Click(object sender, System.EventArgs e)
         {
-            VPersonaje personajeVista = new VPersonaje(this.documento);
+            VPersonaje personajeVista = new VPersonaje(this.documentPath);
             personajeVista.Show();
-            personajeVista.FormClosed += new FormClosedEventHandler(ejemplo);
-        }
-
-        private void ejemplo(object sender, EventArgs e)
-        {
-            MessageBox.Show(sender.GetType().ToString());
         }
     }
 }

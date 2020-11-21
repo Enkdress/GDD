@@ -23,11 +23,5 @@ namespace newGDD.Modelo
         public string Contextura { get => this._contextura; set => this._contextura = value; }
         public string Resumen { get => this._resumen; set => this._resumen = value; }
 
-        public Personaje(string n, string participacion, string arquetipo)
-        {
-            this._nombre = n;
-            this._participacion = participacion;
-            this._arquetipo = arquetipo;
-        }
     }
 }

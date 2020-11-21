@@ -14,9 +14,9 @@ namespace newGDD.Controlador
             
         }
 
-        public Panel AgregarItemDocumento(Panel panel)
+        public FlowLayoutPanel AgregarItemDocumento(FlowLayoutPanel panel)
         {
-            Panel pnlDocumentos = panel;
+            FlowLayoutPanel pnlDocumentos = panel;
             try
             {
                 pnlDocumentos.Controls.Clear();
@@ -24,9 +24,8 @@ namespace newGDD.Controlador
                 List<ItemDocumento> items = new List<ItemDocumento>();
                 foreach (var doc in documentos)
                 {
-                    ItemDocumento newPj = new ItemDocumento(doc.Creadores, doc.FechaCreacion, doc.Nombre, doc.UrlImagen);
-                    newPj.Location = new System.Drawing.Point((documentos.IndexOf(doc) * (newPj.Width + 20)), 0);
-                    items.Add(newPj);
+                    ItemDocumento newDoc = new ItemDocumento(doc.Creadores, doc.FechaCreacion, doc.Nombre, doc.UrlImagen);
+                    items.Add(newDoc);
                 }
 
                 pnlDocumentos.Controls.AddRange(items.ToArray());

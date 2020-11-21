@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Runtime.Serialization;
 using System.Runtime.Serialization.Formatters.Binary;
-using System.Windows.Forms;
 
 namespace newGDD.Lib
 {
@@ -23,21 +22,21 @@ namespace newGDD.Lib
         // Devuelve:
         //    Una lista con los objetos que se encuentran en el archivo
         //
-        public static List<T> LeerArchivo<T>(string path)
+        public static object LeerArchivo(string path)
         {
-            List<T> objects = new List<T>();
             using (Stream fs = new FileStream(path, FileMode.OpenOrCreate, FileAccess.Read))
             {
                 try
                 {
-                    objects = (List<T>)formatter.Deserialize(fs);
+                    object objects = (object)formatter.Deserialize(fs);
+                    return objects;
                 }
                 catch (Exception)
                 {
                     Console.WriteLine("Error al serializar. Archivo vacío");
+                    return new object();
                 }
             }
-            return objects;
         }
 
         public static List<DocumentoDeJuego> RetornarDocumentos()

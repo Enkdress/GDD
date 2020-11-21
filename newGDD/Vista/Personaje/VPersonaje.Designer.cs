@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.pnlPersonajesContainer = new System.Windows.Forms.Panel();
-            this.pnlPersonajesItem = new System.Windows.Forms.Panel();
+            this.pnlPersonajesItem = new System.Windows.Forms.FlowLayoutPanel();
             this.label2 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnEliminar = new System.Windows.Forms.Button();
@@ -39,11 +39,11 @@
             this.rbtnSecundario = new System.Windows.Forms.RadioButton();
             this.rbtnPrimario = new System.Windows.Forms.RadioButton();
             this.label8 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtAltura = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.txtContextura = new System.Windows.Forms.TextBox();
             this.txtEspecie = new System.Windows.Forms.TextBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.txtArquetipo = new System.Windows.Forms.ComboBox();
             this.txtResumen = new System.Windows.Forms.RichTextBox();
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
@@ -70,10 +70,11 @@
             // 
             // pnlPersonajesItem
             // 
+            this.pnlPersonajesItem.AutoScroll = true;
             this.pnlPersonajesItem.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.pnlPersonajesItem.Location = new System.Drawing.Point(0, 70);
+            this.pnlPersonajesItem.Location = new System.Drawing.Point(0, 73);
             this.pnlPersonajesItem.Name = "pnlPersonajesItem";
-            this.pnlPersonajesItem.Size = new System.Drawing.Size(334, 723);
+            this.pnlPersonajesItem.Size = new System.Drawing.Size(334, 720);
             this.pnlPersonajesItem.TabIndex = 1;
             // 
             // label2
@@ -92,11 +93,11 @@
             this.panel2.Controls.Add(this.btnGuardar);
             this.panel2.Controls.Add(this.groupBox1);
             this.panel2.Controls.Add(this.label8);
-            this.panel2.Controls.Add(this.textBox1);
+            this.panel2.Controls.Add(this.txtAltura);
             this.panel2.Controls.Add(this.label7);
             this.panel2.Controls.Add(this.txtContextura);
             this.panel2.Controls.Add(this.txtEspecie);
-            this.panel2.Controls.Add(this.comboBox1);
+            this.panel2.Controls.Add(this.txtArquetipo);
             this.panel2.Controls.Add(this.txtResumen);
             this.panel2.Controls.Add(this.txtNombre);
             this.panel2.Controls.Add(this.label6);
@@ -138,6 +139,7 @@
             this.btnGuardar.TabIndex = 12;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.UseVisualStyleBackColor = false;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // groupBox1
             // 
@@ -193,12 +195,12 @@
             this.label8.TabIndex = 11;
             this.label8.Text = "Arquetipo";
             // 
-            // textBox1
+            // txtAltura
             // 
-            this.textBox1.Location = new System.Drawing.Point(36, 404);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(320, 27);
-            this.textBox1.TabIndex = 5;
+            this.txtAltura.Location = new System.Drawing.Point(36, 404);
+            this.txtAltura.Name = "txtAltura";
+            this.txtAltura.Size = new System.Drawing.Size(320, 27);
+            this.txtAltura.TabIndex = 5;
             // 
             // label7
             // 
@@ -223,10 +225,10 @@
             this.txtEspecie.Size = new System.Drawing.Size(320, 27);
             this.txtEspecie.TabIndex = 3;
             // 
-            // comboBox1
+            // txtArquetipo
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.txtArquetipo.FormattingEnabled = true;
+            this.txtArquetipo.Items.AddRange(new object[] {
             "EL INOCENTE",
             "EL AMIGO",
             "EL HEROE",
@@ -239,10 +241,10 @@
             "EL BROMISTA",
             "EL EXPLORADOR",
             "OTRO"});
-            this.comboBox1.Location = new System.Drawing.Point(36, 466);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(320, 28);
-            this.comboBox1.TabIndex = 6;
+            this.txtArquetipo.Location = new System.Drawing.Point(36, 466);
+            this.txtArquetipo.Name = "txtArquetipo";
+            this.txtArquetipo.Size = new System.Drawing.Size(320, 28);
+            this.txtArquetipo.TabIndex = 6;
             // 
             // txtResumen
             // 
@@ -316,6 +318,7 @@
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Name = "VPersonaje";
             this.Text = "Personaje";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.VPersonaje_FormClosing);
             this.pnlPersonajesContainer.ResumeLayout(false);
             this.pnlPersonajesContainer.PerformLayout();
             this.panel2.ResumeLayout(false);
@@ -330,7 +333,6 @@
 
         private System.Windows.Forms.Panel pnlPersonajesContainer;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Panel pnlPersonajesItem;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label4;
@@ -338,18 +340,19 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txtContextura;
         private System.Windows.Forms.TextBox txtEspecie;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox txtArquetipo;
         private System.Windows.Forms.RichTextBox txtResumen;
         private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtAltura;
         private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.Button btnGuardar;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.RadioButton rbtnTerciario;
         private System.Windows.Forms.RadioButton rbtnSecundario;
         private System.Windows.Forms.RadioButton rbtnPrimario;
+        private System.Windows.Forms.FlowLayoutPanel pnlPersonajesItem;
     }
 }

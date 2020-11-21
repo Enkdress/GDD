@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.pnlDocumentos = new System.Windows.Forms.Panel();
+            this.pnlDocumentos = new System.Windows.Forms.FlowLayoutPanel();
             this.pnlOpciones = new System.Windows.Forms.Panel();
             this.btnAgregarDoc = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
@@ -37,12 +37,12 @@
             // 
             // pnlDocumentos
             // 
+            this.pnlDocumentos.AutoScroll = true;
             this.pnlDocumentos.BackColor = System.Drawing.Color.LightGray;
-            this.pnlDocumentos.Dock = System.Windows.Forms.DockStyle.Right;
-            this.pnlDocumentos.Location = new System.Drawing.Point(320, 0);
-            this.pnlDocumentos.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.pnlDocumentos.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlDocumentos.Location = new System.Drawing.Point(321, 0);
             this.pnlDocumentos.Name = "pnlDocumentos";
-            this.pnlDocumentos.Size = new System.Drawing.Size(851, 629);
+            this.pnlDocumentos.Size = new System.Drawing.Size(891, 785);
             this.pnlDocumentos.TabIndex = 0;
             // 
             // pnlOpciones
@@ -53,7 +53,7 @@
             this.pnlOpciones.Location = new System.Drawing.Point(0, 0);
             this.pnlOpciones.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.pnlOpciones.Name = "pnlOpciones";
-            this.pnlOpciones.Size = new System.Drawing.Size(321, 629);
+            this.pnlOpciones.Size = new System.Drawing.Size(321, 785);
             this.pnlOpciones.TabIndex = 1;
             // 
             // btnAgregarDoc
@@ -86,9 +86,9 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1171, 629);
-            this.Controls.Add(this.pnlOpciones);
+            this.ClientSize = new System.Drawing.Size(1212, 785);
             this.Controls.Add(this.pnlDocumentos);
+            this.Controls.Add(this.pnlOpciones);
             this.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Name = "Principal";
@@ -103,10 +103,9 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Panel pnlDocumentos;
         private System.Windows.Forms.Panel pnlOpciones;
         private System.Windows.Forms.Button btnAgregarDoc;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.FlowLayoutPanel pnlDocumentos;
     }
 }
