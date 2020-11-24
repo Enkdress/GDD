@@ -42,10 +42,14 @@ namespace newGDD.Lib
         public void addParrafos(string[] parrafos)
         {
             pdf.SetTagged();
+            string concatenado = "";
             foreach (var parrafo in parrafos)
             {
-                documento.Add(new Paragraph(parrafo));
+                concatenado += parrafo +"\n"; 
             }
+            Paragraph PDFParrafo = new Paragraph(concatenado)
+             .SetTextAlignment(TextAlignment.LEFT);
+            documento.Add(PDFParrafo);
         }
         public void Cerrar()
         {

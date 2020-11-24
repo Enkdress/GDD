@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
-using newGDD.Interfaces;
 
 namespace newGDD.Vista.FichaTecnica
 {
@@ -21,6 +20,32 @@ namespace newGDD.Vista.FichaTecnica
                 txtNombre.Text = fichaCargada[0][0];
                 txtCreadores.Text = fichaCargada[0][1];
                 txtAmbientacion.Text = fichaCargada[0][2];
+                txtPublico.Text = fichaCargada[0][5];
+
+
+                if (fichaCargada[0][3] == "3D") rd3d.Checked  = true;
+                if (fichaCargada[0][3] == "2D") rd2d.Checked = true;
+                if (fichaCargada[0][3] ==  "PixelArt") rdPixelart.Checked = true;
+                if (fichaCargada[0][3] == "Realista" ) rdRealista.Checked = true;
+
+                foreach (string item in fichaCargada[1] ) {
+                    if (item == "Plataformas") chbxPlataformas.Checked = true;
+                    if (item == "Deportes") chbxDeportes.Checked = true;
+                    if (item == "Carreras") chbxCarreras.Checked = true;
+                    if (item == "Lucha") chbxLucha.Checked = true;
+                    if (item == "Estrategia") chbxEstrategia.Checked = true;
+                    if (item == "Arcade") chbxArcade.Checked = true;
+                }
+
+                foreach (string item in fichaCargada[2])
+                {
+                    if (item == "Retro") chxRetiro.Checked = true;
+                    if (item == "Realista") chxRealista.Checked = true;
+                    if (item == "Electronico") chxElectronico.Checked = true;
+                    if (item == "Banda") chxBanda.Checked = true;
+
+                }
+
             }
         }
 
@@ -57,6 +82,7 @@ namespace newGDD.Vista.FichaTecnica
                 genero,
                 sonido, 
                 path);
+            MessageBox.Show("Documento pdf creado");
         }
 
         private void btnAceptar_Click(object sender, EventArgs e)
@@ -90,6 +116,8 @@ namespace newGDD.Vista.FichaTecnica
                 genero,
                 sonido,
                 pathDocument);
+
+            MessageBox.Show("Informacion guardada");
         }
     }
 }

@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 using newGDD.Lib;
 
 namespace newGDD.Modelo
@@ -34,7 +32,7 @@ namespace newGDD.Modelo
                 archivoPDF.addTitle(_nombreJuego);
                 archivoPDF.addParrafo("Ambientacion:" + _ambientacion + "\nPublico:" + _publico + "\nEstilo:" + _estilo + "\nCreadores:" + _creadores);
                 archivoPDF.addParrafos(_genero);
-                //archivoPDF.addParrafos(_sonido);
+                archivoPDF.addParrafos(_sonido);
             }
             catch (Exception)
             {

@@ -4,6 +4,7 @@ using System.Windows.Forms;
 using newGDD.Controlador;
 using newGDD.Vista.Personaje;
 using newGDD.Vista.FichaTecnica;
+using System.IO;
 
 namespace newGDD.Vista.Componentes
 {
@@ -36,6 +37,12 @@ namespace newGDD.Vista.Componentes
         {
             VPersonaje personajeVista = new VPersonaje(this.documentPath);
             personajeVista.Show();
+        }
+
+        private void lnkRecursos_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            string FolderDefault = Directory.GetCurrentDirectory() + @"\"+ this.documentPath.Split("/")[1] + @"\" + this.documentPath.Split("/")[2];
+            System.Diagnostics.Process.Start(Environment.GetEnvironmentVariable("WINDIR") + @"\explorer.exe", FolderDefault);
         }
     }
 }
