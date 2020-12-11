@@ -29,10 +29,13 @@ namespace newGDD.Vista.Guion
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.tlpGuardarGuion = new System.Windows.Forms.ToolStripMenuItem();
             this.tlpBuscarTexto = new System.Windows.Forms.ToolStripMenuItem();
+            this.printDocument1 = new System.Drawing.Printing.PrintDocument();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -55,18 +58,27 @@ namespace newGDD.Vista.Guion
             this.menuStrip1.Size = new System.Drawing.Size(800, 28);
             this.menuStrip1.TabIndex = 13;
             this.menuStrip1.Text = "menuStrip1";
+            this.menuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip1_ItemClicked);
             // 
             // tlpGuardarGuion
             // 
+            this.tlpGuardarGuion.CheckOnClick = true;
             this.tlpGuardarGuion.Name = "tlpGuardarGuion";
             this.tlpGuardarGuion.Size = new System.Drawing.Size(76, 24);
             this.tlpGuardarGuion.Text = "&Guardar";
             // 
             // tlpBuscarTexto
             // 
+            this.tlpBuscarTexto.CheckOnClick = true;
             this.tlpBuscarTexto.Name = "tlpBuscarTexto";
             this.tlpBuscarTexto.Size = new System.Drawing.Size(66, 24);
             this.tlpBuscarTexto.Text = "&Buscar";
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
             // 
             // VGuion
             // 
@@ -92,5 +104,7 @@ namespace newGDD.Vista.Guion
         private System.Windows.Forms.ToolStripMenuItem tlpBuscar;
         private System.Windows.Forms.ToolStripMenuItem tlpGuardarGuion;
         private System.Windows.Forms.ToolStripMenuItem tlpBuscarTexto;
+        private System.Drawing.Printing.PrintDocument printDocument1;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
     }
 }

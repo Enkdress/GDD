@@ -1,4 +1,5 @@
-﻿using System.Windows.Forms;
+﻿using System;
+using System.Windows.Forms;
 
 namespace newGDD.Vista.Guion
 {
@@ -9,13 +10,22 @@ namespace newGDD.Vista.Guion
             InitializeComponent();
         }
 
-        private void tlpBuscarTexto_ItemClicked(object sender, ToolStripItemClickedEventArgs e) {
-            MessageBox.Show("Buscar");
+        private void BuscarTexto() {
+            MessageBox.Show("Buscar  "+ richTextBox1.Text);
         }
 
-        private void tlpGuardarGuion_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        private void GuardarGuion()
         {
-            MessageBox.Show("Guardar Guion");
+            MessageBox.Show("Guardar Guion   " + richTextBox1.Text);
+        }
+
+        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+            if (e.ClickedItem.Name == "tlpGuardarGuion") {
+                this.GuardarGuion();
+            } else if (e.ClickedItem.Name == "tlpBuscarTexto") {
+                this.BuscarTexto();
+            }
         }
     }
 }
