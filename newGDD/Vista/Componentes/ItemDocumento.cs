@@ -4,6 +4,7 @@ using System.Windows.Forms;
 using newGDD.Controlador;
 using newGDD.Vista.Personaje;
 using newGDD.Vista.FichaTecnica;
+using newGDD.Vista.Guion;
 using System.IO;
 
 namespace newGDD.Vista.Componentes
@@ -43,6 +44,12 @@ namespace newGDD.Vista.Componentes
         {
             string FolderDefault = Directory.GetCurrentDirectory() + @"\"+ this.documentPath.Split("/")[1] + @"\" + this.documentPath.Split("/")[2];
             System.Diagnostics.Process.Start(Environment.GetEnvironmentVariable("WINDIR") + @"\explorer.exe", FolderDefault);
+        }
+
+        private void btnGuion_Click(object sender, EventArgs e)
+        {
+            VGuion guionVista = new VGuion(this.documentPath);
+            guionVista.Show();
         }
     }
 }

@@ -38,7 +38,9 @@
             this.btnPersonajes = new System.Windows.Forms.Button();
             this.btnGuion = new System.Windows.Forms.Button();
             this.lnkRecursos = new System.Windows.Forms.LinkLabel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.imgDoc)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // imgDoc
@@ -140,6 +142,7 @@
             this.btnGuion.TabIndex = 8;
             this.btnGuion.Text = "Guion";
             this.btnGuion.UseVisualStyleBackColor = false;
+            this.btnGuion.Click += new System.EventHandler(this.btnGuion_Click);
             // 
             // lnkRecursos
             // 
@@ -155,11 +158,20 @@
             this.lnkRecursos.VisitedLinkColor = System.Drawing.Color.DeepSkyBlue;
             this.lnkRecursos.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lnkRecursos_LinkClicked);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Location = new System.Drawing.Point(565, 296);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(8, 8);
+            this.pictureBox1.TabIndex = 10;
+            this.pictureBox1.TabStop = false;
+            // 
             // ItemDocumento
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.lnkRecursos);
             this.Controls.Add(this.btnGuion);
             this.Controls.Add(this.btnPersonajes);
@@ -175,6 +187,7 @@
             this.Name = "ItemDocumento";
             this.Size = new System.Drawing.Size(417, 399);
             ((System.ComponentModel.ISupportInitialize)(this.imgDoc)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -192,5 +205,6 @@
         private System.Windows.Forms.Button btnPersonajes;
         private System.Windows.Forms.Button btnGuion;
         private System.Windows.Forms.LinkLabel lnkRecursos;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
