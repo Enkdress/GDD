@@ -5,9 +5,15 @@ namespace newGDD.Vista.Guion
 {
     public partial class VGuion : Form
     {
+        private Controlador.Guion cGuion;
         public VGuion(string path)
         {
             InitializeComponent();
+            cGuion = new Controlador.Guion(path);
+            String guionText = cGuion.cargarGuion();
+            if ( guionText != "") {
+                richTextBox1.Text = cGuion.cargarGuion();
+            }
         }
 
         private void BuscarTexto() {
@@ -16,7 +22,8 @@ namespace newGDD.Vista.Guion
 
         private void GuardarGuion()
         {
-            MessageBox.Show("Guardar Guion   " + richTextBox1.Text);
+            cGuion.GuardarGuion(richTextBox1.Text);
+            MessageBox.Show("Guion Guardado");
         }
 
         private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
