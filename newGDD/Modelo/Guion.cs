@@ -7,8 +7,7 @@ namespace newGDD.Modelo
     [Serializable]
     public class Guion
     {
-        string image { get; set; }
-        string sonido { get; set; }
-        string interaccion { get; set; }
+        private string _text;
+        public string Text { get => this._text; set => this._text = value; }
     }
 }
