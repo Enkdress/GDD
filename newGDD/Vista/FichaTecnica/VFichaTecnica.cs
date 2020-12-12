@@ -82,7 +82,7 @@ namespace newGDD.Vista.FichaTecnica
                 genero,
                 sonido, 
                 path);
-            MessageBox.Show("Documento pdf creado");
+            MessageBox.Show("Documento pdf creado", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void btnAceptar_Click(object sender, EventArgs e)
@@ -117,7 +117,8 @@ namespace newGDD.Vista.FichaTecnica
                 sonido,
                 pathDocument);
 
-            MessageBox.Show("Informacion guardada");
+            MessageBox.Show("Informacion guardada","Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            this.Close();
         }
     }
 }
