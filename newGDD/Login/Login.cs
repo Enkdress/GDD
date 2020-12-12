@@ -29,7 +29,7 @@ namespace newGDD.Login
                         if (credentials.Equals(decrypted))
                         {
                             this.Hide();
-                            new Principal.Principal().Show();
+                            new Principal.Principal(this).Show();
                         } else
                         {
                             MessageBox.Show("Los datos no coinciden", "Fallo al iniciar sesion", MessageBoxButtons.OK, MessageBoxIcon.Error);
