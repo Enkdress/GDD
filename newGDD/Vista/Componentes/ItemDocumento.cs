@@ -6,12 +6,14 @@ using newGDD.Vista.Personaje;
 using newGDD.Vista.FichaTecnica;
 using newGDD.Vista.Guion;
 using System.IO;
+using newGDD.Vista.Recursos;
 
 namespace newGDD.Vista.Componentes
 {
     public partial class ItemDocumento : UserControl
     {
         private string documentPath;
+        private string FolderPath;
 
         public ItemDocumento()
         {
@@ -26,6 +28,7 @@ namespace newGDD.Vista.Componentes
             lblNombreDoc.Text = nd;
             //imgDoc.Image = Image.FromFile(@imagen);
             this.documentPath = "./Documentos/"+nd+"/data.dat";
+            this.FolderPath = "./Documentos/"+nd;
         }
 
         private void btnFichaTecnica_Click(object sender, System.EventArgs e)
@@ -42,8 +45,8 @@ namespace newGDD.Vista.Componentes
 
         private void lnkRecursos_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            string FolderDefault = Directory.GetCurrentDirectory() + @"\"+ this.documentPath.Split("/")[1] + @"\" + this.documentPath.Split("/")[2];
-            System.Diagnostics.Process.Start(Environment.GetEnvironmentVariable("WINDIR") + @"\explorer.exe", FolderDefault);
+            VRecurso recursoVista = new VRecurso(this.FolderPath);
+            recursoVista.Show();
         }
 
         private void btnGuion_Click(object sender, EventArgs e)

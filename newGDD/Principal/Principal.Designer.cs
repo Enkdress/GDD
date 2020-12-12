@@ -94,6 +94,7 @@
             this.Name = "Principal";
             this.Text = "Principalcs";
             this.Activated += new System.EventHandler(this.pnlDocumentos_Enter);
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Principal_FormClosed);
             this.Enter += new System.EventHandler(this.pnlDocumentos_Enter);
             this.Leave += new System.EventHandler(this.pnlDocumentos_Enter);
             this.pnlOpciones.ResumeLayout(false);

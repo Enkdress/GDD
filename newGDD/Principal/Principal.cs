@@ -7,11 +7,13 @@ namespace newGDD.Principal
 {
     public partial class Principal : Form
     {
-        public Principal()
+        private Form vistaLogin;
+        public Principal(Form vistaLogin)
         {
             InitializeComponent();
             Dashboard ds = new Dashboard();
             pnlDocumentos = ds.AgregarItemDocumento(pnlDocumentos);
+            this.vistaLogin = vistaLogin;
         }
 
         private void btnAgregarDoc_Click(object sender, EventArgs e)
@@ -24,6 +26,11 @@ namespace newGDD.Principal
         {
             Dashboard ds = new Dashboard();
             pnlDocumentos = ds.AgregarItemDocumento(pnlDocumentos);
+        }
+
+        private void Principal_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            this.vistaLogin.Close();
         }
     }
 }

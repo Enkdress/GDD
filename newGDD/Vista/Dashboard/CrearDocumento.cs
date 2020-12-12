@@ -3,7 +3,7 @@ using System.Windows.Forms;
 using newGDD.Vista.Personaje;
 using newGDD.Vista.FichaTecnica;
 using newGDD.Vista.Guion;
-
+using newGDD.Vista.Recursos;
 
 namespace newGDD.Vista.Dashboard
 {
@@ -11,6 +11,7 @@ namespace newGDD.Vista.Dashboard
     {
         private Controlador.DocumentoDeJuego documento;
         private string ubicacionDocumento;
+        private string ubicacionCarpetaDocumento;
         public CrearDocumento()
         {
             InitializeComponent();
@@ -20,6 +21,7 @@ namespace newGDD.Vista.Dashboard
         private void nombreDocumento_Load(object sender, EventArgs e) {
             documento = new Controlador.DocumentoDeJuego(textBox1.Text);
             ubicacionDocumento = "./Documentos/" + documento.Documento.Nombre + "/data.dat";
+            ubicacionCarpetaDocumento = "./Documentos/" + documento.Documento.Nombre;
             Lib.Fichero.ModificarArchivo(ubicacionDocumento, documento.Documento);
         }
 
@@ -43,7 +45,8 @@ namespace newGDD.Vista.Dashboard
 
         private void btnRecursos_Click(object sender, EventArgs e)
         {
-
+            VRecurso recursoVista = new VRecurso(this.ubicacionCarpetaDocumento);
+            recursoVista.Show();
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)
