@@ -34,8 +34,8 @@ namespace newGDD.Vista.Guion
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.tlpGuardarGuion = new System.Windows.Forms.ToolStripMenuItem();
             this.tlpBuscarTexto = new System.Windows.Forms.ToolStripMenuItem();
-            this.printDocument1 = new System.Drawing.Printing.PrintDocument();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.printDocument1 = new System.Drawing.Printing.PrintDocument();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -70,6 +70,7 @@ namespace newGDD.Vista.Guion
             // tlpBuscarTexto
             // 
             this.tlpBuscarTexto.CheckOnClick = true;
+            this.tlpBuscarTexto.DropDown = this.contextMenuStrip1;
             this.tlpBuscarTexto.Name = "tlpBuscarTexto";
             this.tlpBuscarTexto.Size = new System.Drawing.Size(66, 24);
             this.tlpBuscarTexto.Text = "&Buscar";
@@ -78,6 +79,7 @@ namespace newGDD.Vista.Guion
             // 
             this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.OwnerItem = this.tlpBuscarTexto;
             this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
             // 
             // VGuion
