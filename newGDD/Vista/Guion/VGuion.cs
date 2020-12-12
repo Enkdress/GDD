@@ -28,20 +28,14 @@ namespace newGDD.Vista.Guion
         private void GuardarGuion()
         {
             cGuion.GuardarGuion(richTextBox1.Text);
-            MessageBox.Show("Guion Guardado");
         }
 
         private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
         {
-            MessageBox.Show(e.ClickedItem.Name);
-            if (e.ClickedItem.Name == "tlpGuardarGuion") {
-                this.GuardarGuion();
-            } else if (e.ClickedItem.Name == "tlpBuscarTexto") {
-                this.BuscarTexto();
-            }
+           this.GuardarGuion();
         }
 
-        public void remplazarPalabra(RichTextBox richTextBox1, string palabra, string remplaza)
+        private void remplazarPalabra(RichTextBox richTextBox1, string palabra, string remplaza)
         {
             int i = 0;
             int n = 0;
@@ -53,10 +47,9 @@ namespace newGDD.Vista.Guion
                 richTextBox1.SelectedText = remplaza;
                 n++;
             }
-            MessageBox.Show("Se remplazo " + n + " coincidencias!");
         }
 
-        public void buscarPalabra(RichTextBox myRtb, string palabra) 
+        private void buscarPalabra(RichTextBox myRtb, string palabra) 
         {
             int i = 0;
             int n = 0;
@@ -67,7 +60,15 @@ namespace newGDD.Vista.Guion
                 i += a;
                 n++;
             }
-            MessageBox.Show("Encontrado " + n + " coincidencias!");
+            MessageBox.Show("Se encontro: "+ n +" coincidencias");
+        }
+
+        private void buscar_Load(object sender, EventArgs e) {
+            this.buscarPalabra(richTextBox1, txtBuscarPalabra.Text);
+        }
+        private void btnCambiar_Click(object sender, EventArgs e)
+        {
+            remplazarPalabra(richTextBox1, txtBuscarPalabra.Text, textRemplaza.Text);
         }
     }
 }
