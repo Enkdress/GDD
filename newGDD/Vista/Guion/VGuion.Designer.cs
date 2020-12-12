@@ -33,11 +33,18 @@ namespace newGDD.Vista.Guion
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.tlpGuardarGuion = new System.Windows.Forms.ToolStripMenuItem();
+            this.tlpNegrita = new System.Windows.Forms.ToolStripMenuItem();
+            this.tlpSubrayar = new System.Windows.Forms.ToolStripMenuItem();
+            this.tlpTachado = new System.Windows.Forms.ToolStripMenuItem();
+            this.tlpCursiva = new System.Windows.Forms.ToolStripMenuItem();
+            this.tlpAlinearCentro = new System.Windows.Forms.ToolStripMenuItem();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.printDocument1 = new System.Drawing.Printing.PrintDocument();
             this.txtBuscarPalabra = new System.Windows.Forms.TextBox();
             this.btnCambiar = new System.Windows.Forms.Button();
             this.textRemplaza = new System.Windows.Forms.TextBox();
+            this.tlpAlinearDerecha = new System.Windows.Forms.ToolStripMenuItem();
+            this.tlpAlinearIzquierda = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -53,7 +60,14 @@ namespace newGDD.Vista.Guion
             // 
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tlpGuardarGuion});
+            this.tlpGuardarGuion,
+            this.tlpNegrita,
+            this.tlpSubrayar,
+            this.tlpTachado,
+            this.tlpCursiva,
+            this.tlpAlinearCentro,
+            this.tlpAlinearDerecha,
+            this.tlpAlinearIzquierda});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(800, 28);
@@ -67,6 +81,36 @@ namespace newGDD.Vista.Guion
             this.tlpGuardarGuion.Name = "tlpGuardarGuion";
             this.tlpGuardarGuion.Size = new System.Drawing.Size(76, 24);
             this.tlpGuardarGuion.Text = "&Guardar";
+            // 
+            // tlpNegrita
+            // 
+            this.tlpNegrita.Name = "tlpNegrita";
+            this.tlpNegrita.Size = new System.Drawing.Size(73, 24);
+            this.tlpNegrita.Text = "Negrita";
+            // 
+            // tlpSubrayar
+            // 
+            this.tlpSubrayar.Name = "tlpSubrayar";
+            this.tlpSubrayar.Size = new System.Drawing.Size(81, 24);
+            this.tlpSubrayar.Text = "Subrayar";
+            // 
+            // tlpTachado
+            // 
+            this.tlpTachado.Name = "tlpTachado";
+            this.tlpTachado.Size = new System.Drawing.Size(78, 24);
+            this.tlpTachado.Text = "Tachado";
+            // 
+            // tlpCursiva
+            // 
+            this.tlpCursiva.Name = "tlpCursiva";
+            this.tlpCursiva.Size = new System.Drawing.Size(70, 24);
+            this.tlpCursiva.Text = "Cursiva";
+            // 
+            // tlpAlinearCentro
+            // 
+            this.tlpAlinearCentro.Name = "tlpAlinearCentro";
+            this.tlpAlinearCentro.Size = new System.Drawing.Size(116, 24);
+            this.tlpAlinearCentro.Text = "Alinear centro";
             // 
             // contextMenuStrip1
             // 
@@ -101,6 +145,18 @@ namespace newGDD.Vista.Guion
             this.textRemplaza.Size = new System.Drawing.Size(128, 27);
             this.textRemplaza.TabIndex = 17;
             // 
+            // tlpAlinearDerecha
+            // 
+            this.tlpAlinearDerecha.Name = "tlpAlinearDerecha";
+            this.tlpAlinearDerecha.Size = new System.Drawing.Size(129, 24);
+            this.tlpAlinearDerecha.Text = "Alinear Derecha";
+            // 
+            // tlpAlinearIzquierda
+            // 
+            this.tlpAlinearIzquierda.Name = "tlpAlinearIzquierda";
+            this.tlpAlinearIzquierda.Size = new System.Drawing.Size(136, 24);
+            this.tlpAlinearIzquierda.Text = "Alinear Izquierda";
+            // 
             // VGuion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -130,5 +186,12 @@ namespace newGDD.Vista.Guion
         private System.Windows.Forms.TextBox txtBuscarPalabra;
         private System.Windows.Forms.Button btnCambiar;
         private System.Windows.Forms.TextBox textRemplaza;
+        private System.Windows.Forms.ToolStripMenuItem tlpNegrita;
+        private System.Windows.Forms.ToolStripMenuItem tlpSubrayar;
+        private System.Windows.Forms.ToolStripMenuItem tlpTachado;
+        private System.Windows.Forms.ToolStripMenuItem tlpCursiva;
+        private System.Windows.Forms.ToolStripMenuItem tlpAlinearCentro;
+        private System.Windows.Forms.ToolStripMenuItem tlpAlinearDerecha;
+        private System.Windows.Forms.ToolStripMenuItem tlpAlinearIzquierda;
     }
 }
