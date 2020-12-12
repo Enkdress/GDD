@@ -33,6 +33,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnEliminar = new System.Windows.Forms.Button();
+            this.btnModificar = new System.Windows.Forms.Button();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.rbtnTerciario = new System.Windows.Forms.RadioButton();
@@ -65,23 +66,23 @@
             this.pnlPersonajesContainer.Location = new System.Drawing.Point(0, 0);
             this.pnlPersonajesContainer.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.pnlPersonajesContainer.Name = "pnlPersonajesContainer";
-            this.pnlPersonajesContainer.Size = new System.Drawing.Size(334, 793);
+            this.pnlPersonajesContainer.Size = new System.Drawing.Size(364, 762);
             this.pnlPersonajesContainer.TabIndex = 0;
             // 
             // pnlPersonajesItem
             // 
             this.pnlPersonajesItem.AutoScroll = true;
             this.pnlPersonajesItem.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.pnlPersonajesItem.Location = new System.Drawing.Point(0, 73);
+            this.pnlPersonajesItem.Location = new System.Drawing.Point(0, 79);
             this.pnlPersonajesItem.Name = "pnlPersonajesItem";
-            this.pnlPersonajesItem.Size = new System.Drawing.Size(334, 720);
+            this.pnlPersonajesItem.Size = new System.Drawing.Size(364, 683);
             this.pnlPersonajesItem.TabIndex = 1;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Georgia", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(17, 24);
+            this.label2.Location = new System.Drawing.Point(30, 22);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(300, 27);
             this.label2.TabIndex = 0;
@@ -90,6 +91,7 @@
             // panel2
             // 
             this.panel2.Controls.Add(this.btnEliminar);
+            this.panel2.Controls.Add(this.btnModificar);
             this.panel2.Controls.Add(this.btnGuardar);
             this.panel2.Controls.Add(this.groupBox1);
             this.panel2.Controls.Add(this.label8);
@@ -106,10 +108,10 @@
             this.panel2.Controls.Add(this.label3);
             this.panel2.Controls.Add(this.label1);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(334, 0);
+            this.panel2.Location = new System.Drawing.Point(364, 0);
             this.panel2.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(691, 793);
+            this.panel2.Size = new System.Drawing.Size(709, 762);
             this.panel2.TabIndex = 1;
             // 
             // btnEliminar
@@ -119,12 +121,28 @@
             this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEliminar.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnEliminar.ForeColor = System.Drawing.Color.White;
-            this.btnEliminar.Location = new System.Drawing.Point(446, 395);
+            this.btnEliminar.Location = new System.Drawing.Point(446, 464);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(150, 46);
-            this.btnEliminar.TabIndex = 13;
+            this.btnEliminar.TabIndex = 14;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = false;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
+            // 
+            // btnModificar
+            // 
+            this.btnModificar.BackColor = System.Drawing.Color.SteelBlue;
+            this.btnModificar.FlatAppearance.BorderSize = 0;
+            this.btnModificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnModificar.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnModificar.ForeColor = System.Drawing.Color.White;
+            this.btnModificar.Location = new System.Drawing.Point(446, 395);
+            this.btnModificar.Name = "btnModificar";
+            this.btnModificar.Size = new System.Drawing.Size(150, 46);
+            this.btnModificar.TabIndex = 13;
+            this.btnModificar.Text = "Modificar";
+            this.btnModificar.UseVisualStyleBackColor = false;
+            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
             // 
             // btnGuardar
             // 
@@ -311,14 +329,13 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1025, 793);
+            this.ClientSize = new System.Drawing.Size(1073, 762);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.pnlPersonajesContainer);
             this.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Name = "VPersonaje";
             this.Text = "Personaje";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.VPersonaje_FormClosing);
             this.pnlPersonajesContainer.ResumeLayout(false);
             this.pnlPersonajesContainer.PerformLayout();
             this.panel2.ResumeLayout(false);
@@ -338,21 +355,22 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox txtContextura;
-        private System.Windows.Forms.TextBox txtEspecie;
-        private System.Windows.Forms.ComboBox txtArquetipo;
-        private System.Windows.Forms.RichTextBox txtResumen;
-        private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox txtAltura;
-        private System.Windows.Forms.Button btnEliminar;
+        private System.Windows.Forms.Button btnModificar;
         private System.Windows.Forms.Button btnGuardar;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.RadioButton rbtnTerciario;
-        private System.Windows.Forms.RadioButton rbtnSecundario;
-        private System.Windows.Forms.RadioButton rbtnPrimario;
         private System.Windows.Forms.FlowLayoutPanel pnlPersonajesItem;
+        public System.Windows.Forms.TextBox txtContextura;
+        public System.Windows.Forms.TextBox txtEspecie;
+        public System.Windows.Forms.ComboBox txtArquetipo;
+        public System.Windows.Forms.RichTextBox txtResumen;
+        public System.Windows.Forms.TextBox txtNombre;
+        public System.Windows.Forms.TextBox txtAltura;
+        public System.Windows.Forms.RadioButton rbtnTerciario;
+        public System.Windows.Forms.RadioButton rbtnSecundario;
+        public System.Windows.Forms.RadioButton rbtnPrimario;
+        private System.Windows.Forms.Button btnEliminar;
     }
 }

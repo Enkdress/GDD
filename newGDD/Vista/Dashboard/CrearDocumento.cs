@@ -22,11 +22,6 @@ namespace newGDD.Vista.Dashboard
             ubicacionDocumento = "./Documentos/" + documento.Documento.Nombre + "/data.dat";
             Lib.Fichero.ModificarArchivo(ubicacionDocumento, documento.Documento);
         }
-        private void button1_Click(object sender, EventArgs e)
-        {            
-           // string ubicacionDocumento = "./Documentos/" + documento.Documento.Nombre + "/data.dat";
-            //Lib.Fichero.ModificarArchivo(ubicacionDocumento, documento.Documento);
-        }
 
         private void btnFicha_Click(object sender, EventArgs e)
         {
@@ -49,6 +44,11 @@ namespace newGDD.Vista.Dashboard
         private void btnRecursos_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnGuardar_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

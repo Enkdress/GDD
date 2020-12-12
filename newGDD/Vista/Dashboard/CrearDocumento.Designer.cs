@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnGuardar = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.btnFicha = new System.Windows.Forms.Button();
             this.btnPersonajes = new System.Windows.Forms.Button();
@@ -45,15 +45,15 @@
             this.textBox1.TabIndex = 0;
             this.textBox1.Leave += new System.EventHandler(this.nombreDocumento_Load);
             // 
-            // button1
+            // btnGuardar
             // 
-            this.button1.Location = new System.Drawing.Point(606, 431);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(172, 61);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "Guardar";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnGuardar.Location = new System.Drawing.Point(606, 431);
+            this.btnGuardar.Name = "btnGuardar";
+            this.btnGuardar.Size = new System.Drawing.Size(172, 61);
+            this.btnGuardar.TabIndex = 1;
+            this.btnGuardar.Text = "Guardar";
+            this.btnGuardar.UseVisualStyleBackColor = true;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // label1
             // 
@@ -115,7 +115,7 @@
             this.Controls.Add(this.btnPersonajes);
             this.Controls.Add(this.btnFicha);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.textBox1);
             this.Name = "CrearDocumento";
             this.Text = "CrearDocumento";
@@ -127,7 +127,7 @@
         #endregion
 
         private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnGuardar;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnFicha;
         private System.Windows.Forms.Button btnPersonajes;

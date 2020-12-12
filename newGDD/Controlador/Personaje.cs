@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Windows.Forms;
 using newGDD.Lib;
 using newGDD.Vista.Componentes;
+using newGDD.Vista.Personaje;
 
 namespace newGDD.Controlador
 {
@@ -10,12 +11,15 @@ namespace newGDD.Controlador
     {
         private string docPath;
         private Modelo.DocumentoDeJuego documento;
+        private VPersonaje vistaPersonajes;
+        private int pjSeleccionado;
         private List<Modelo.Personaje> _personajes;
         public List<Modelo.Personaje> Personajes { get => this._personajes; set => this._personajes = value; }
 
-        public Personaje(string docPath)
+        public Personaje(string docPath, VPersonaje vistaPersonajes)
         {
             this.docPath = docPath;
+            this.vistaPersonajes = vistaPersonajes;
         }
 
         public FlowLayoutPanel AgregarItemPersonaje(FlowLayoutPanel panel)
@@ -40,6 +44,7 @@ namespace newGDD.Controlador
                             personaje.Participation,
                             personaje.Resumen);
 
+                        newPj.Controls.Find("btnSeleccionar", true)[0].Click += new EventHandler(SeleccionarPersonaje);
                         items.Add(newPj);
                     }
 
@@ -80,6 +85,60 @@ namespace newGDD.Controlador
 
             this._personajes.Add(personaje);
             documento.Personajes = this._personajes;
+        }
+
+        public void ModificarPersonaje(
+            string nombre,
+            string contextura,
+            string especie,
+            string resumen,
+            string altura,
+            string arquetipo,
+            string participacion)
+        {
+            Modelo.Personaje personaje = new Modelo.Personaje();
+            personaje.Nombre = nombre;
+            personaje.Contextura = contextura;
+            personaje.Especie = especie;
+            personaje.Resumen = resumen;
+            personaje.Altura = altura;
+            personaje.Arquetipo = arquetipo;
+            personaje.Participation = participacion;
+
+            this._personajes[pjSeleccionado] = personaje;
+            documento.Personajes = this._personajes;
+        }
+
+        public void EliminarPersonaje()
+        {
+            this._personajes.RemoveAt(pjSeleccionado);
+            documento.Personajes = this._personajes;
+        }
+
+        public void SeleccionarPersonaje(object sender, EventArgs e)
+        {
+            var btnSeleccionar = (Button)sender;
+            var personaje = (ItemPersonaje)btnSeleccionar.Parent;
+            var personajesPanel = this.vistaPersonajes.Controls.Find("pnlPersonajesItem", true)[0];
+            this.pjSeleccionado = personajesPanel.Controls.IndexOf(personaje);
+            this.vistaPersonajes.txtNombre.Text = personaje.lblNombre.Text;
+            this.vistaPersonajes.txtResumen.Text = personaje.txtResumen.Text;
+            this.vistaPersonajes.txtEspecie.Text = personaje.lblEspecie.Text;
+            this.vistaPersonajes.txtContextura.Text = personaje.lblContextura.Text;
+            this.vistaPersonajes.txtArquetipo.Text = personaje.lblArquetipo.Text;
+            this.vistaPersonajes.txtAltura.Text = personaje.lblAltura.Text;
+            switch (personaje.lblParticipacion.Text)
+            {
+                case "Primario":
+                    this.vistaPersonajes.rbtnPrimario.Checked = true;
+                    break;
+                case "Secundario":
+                    this.vistaPersonajes.rbtnSecundario.Checked = true;
+                    break;
+                case "Terciario":
+                    this.vistaPersonajes.rbtnTerciario.Checked = true;
+                    break;
+            }
         }
     }
 }
