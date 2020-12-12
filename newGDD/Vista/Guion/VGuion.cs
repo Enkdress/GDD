@@ -32,7 +32,39 @@ namespace newGDD.Vista.Guion
 
         private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
         {
-           this.GuardarGuion();
+            if (e.ClickedItem.Name == "tlpGuardarGuion")
+            {
+                this.GuardarGuion();
+            }
+            else if (e.ClickedItem.Name == "tlpNegrita")
+            {
+                richTextBox1.Rtf = @"{\rtf1\ansi \b " + richTextBox1.Text + "}";
+
+            }
+            else if (e.ClickedItem.Name == "tlpSubrayar")
+            {
+                richTextBox1.Rtf = @"{\rtf1\ansi \ul " + richTextBox1.Text + "}";
+            }
+            else if (e.ClickedItem.Name == "tlpTachado")
+            {
+                richTextBox1.Rtf = @"{\rtf1\ansi \strike " + richTextBox1.Text + "}";
+            }
+            else if (e.ClickedItem.Name == "tlpCursiva")
+            {
+                richTextBox1.Rtf = @"{\rtf1\ansi \i " + richTextBox1.Text + "}";
+            }
+            else if (e.ClickedItem.Name == "tlpAlinearCentro") 
+            {
+                richTextBox1.SelectionAlignment = HorizontalAlignment.Center;
+            }
+            else if (e.ClickedItem.Name == "tlpAlinearDerecha")
+            {
+                richTextBox1.SelectionAlignment = HorizontalAlignment.Right;
+            }
+            else if (e.ClickedItem.Name == "tlpAlinearIzquierda")
+            {
+                richTextBox1.SelectionAlignment = HorizontalAlignment.Left;
+            }
         }
 
         private void remplazarPalabra(RichTextBox richTextBox1, string palabra, string remplaza)
